@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Kuliner Khas Gresik: Warisan Cita Rasa yang Terlindungi - Aunara Blog</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#6d4c41",
+                        "primary-dark": "#5d4037",
+                        "secondary": "#f4f1ea",
+                        "text-main": "#2d2d2d",
+                        "background-light": "#fdfbf7",
+                        "background-dark": "#1a1a1a",
+                        "surface-light": "#f4f1ea",
+                        "surface-dark": "#262626",
+                    },
+                    fontFamily: {
+                        sans: ['"DM Sans"', 'sans-serif'],
+                        display: ['"Playfair Display"', 'serif'],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        'xl': '1rem',
+                        '2xl': '1.5rem',
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Article Content Styling */
+        .article-content {
+            line-height: 1.8;
+        }
+        
+        .article-content h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #2d2d2d;
+        }
+        
+        .article-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #2d2d2d;
+        }
+        
+        .article-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem;
+            color: #4a5568;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+        
+        .article-content li {
+            margin-bottom: 0.75rem;
+            font-size: 1.125rem;
+            color: #4a5568;
+        }
+        
+        .article-content blockquote {
+            border-left: 4px solid #6d4c41;
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: #718096;
+        }
+
+        /* Mobile Bottom Navigation */
+        .mobile-bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            border-top: 1px solid #e5e7eb;
+            z-index: 50;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-bottom-nav {
+                display: block;
+            }
+            body {
+                padding-bottom: 70px;
+            }
+        }
+
+        .mobile-bottom-nav a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem;
+            color: #6b7280;
+            font-size: 0.75rem;
+            transition: all 0.3s;
+        }
+
+        .mobile-bottom-nav a.active {
+            color: #6d4c41;
+        }
+
+        .mobile-bottom-nav a .material-icons-outlined {
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-gray-200 font-sans antialiased transition-colors duration-300">
+    
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-3xl text-primary">chair</span>
+                <a href="index.html" class="text-2xl font-bold font-display tracking-tight text-gray-900 dark:text-white">Aunara</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600 dark:text-gray-300">
+                <a class="relative py-1 hover:text-primary transition-colors after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full" href="index.html">Home</a>
+                <a class="relative py-1 hover:text-primary transition-colors after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full" href="collection.html">Collection</a>
+                <a class="relative py-1 hover:text-primary transition-colors after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full" href="rooms.html">Rooms</a>
+                <a class="relative py-1 hover:text-primary transition-colors after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full" href="shop.html">Shop</a>
+                <a class="relative py-1 hover:text-primary transition-colors after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full text-primary after:w-full" href="blog.html">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <article class="max-w-4xl mx-auto px-6 py-16">
+        <div class="mb-8">
+            <a href="blog.html" class="inline-flex items-center text-sm font-medium text-primary hover:text-primary-dark transition-colors mb-6">
+                <span class="material-symbols-outlined text-sm mr-1">arrow_back</span>
+                Back to Blog
+            </a>
+            <div class="mb-6">
+                <span class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                    Kuliner & Budaya
+                </span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+                Kuliner Khas Gresik: Warisan Cita Rasa yang Terlindungi
+            </h1>
+            <div class="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
+                <span>By Tim Redaksi</span>
+                <span>•</span>
+                <span>Februari 5, 2026</span>
+                <span>•</span>
+                <span>10 min read</span>
+            </div>
+        </div>
+
+        <!-- Featured Image -->
+        <div class="mb-12 rounded-2xl overflow-hidden">
+            <img alt="Nasi Krawu Gresik" class="w-full h-[400px] md:h-[500px] object-cover" src="/home/fatah/.gemini/antigravity/brain/8eadba15-9469-46d7-8033-faa5ecb5055d/nasi_krawu_gresik_1770230887440.png"/>
+        </div>
+
+        <!-- Article Content -->
+        <div class="article-content prose prose-lg max-w-none">
+            <p class="text-xl font-light text-gray-700 dark:text-gray-300 mb-8">
+                Kabupaten Gresik di Jawa Timur memiliki kekayaan kuliner yang tidak kalah menarik dengan daerah lainnya. Dari hidangan gurih hingga manis, kuliner Gresik mencerminkan perpaduan budaya pesisir dan tradisi yang kuat. Mari kita telusuri warisan kuliner yang telah mendapat perlindungan hukum ini.
+            </p>
+
+            <h2>1. Nasi Krawu: Ikon Kuliner Gresik</h2>
+            <p>
+                Nasi Krawu adalah hidangan paling terkenal dari Gresik yang telah melegenda di seluruh Jawa Timur.
+            </p>
+
+            <div class="my-8 rounded-xl overflow-hidden">
+                <img alt="Nasi Krawu Gresik" class="w-full h-auto object-cover" src="/home/fatah/.gemini/antigravity/brain/8eadba15-9469-46d7-8033-faa5ecb5055d/nasi_krawu_gresik_1770230887440.png"/>
+            </div>
+
+            <ul>
+                <li><strong>Sejarah:</strong> Nasi Krawu berasal dari daerah Krawu, Gresik dan telah menjadi kuliner legendaris sejak lama. Hidangan ini mencerminkan cita rasa khas pesisir utara Jawa.</li>
+                <li><strong>Komponen Utama:</strong> Nasi putih yang disajikan dengan daging sapi yang dimasak dengan bumbu khas hingga empuk dan berwarna gelap, dilengkapi dengan serundeng (kelapa sangrai berbumbu), sambal, dan kerupuk rambak.</li>
+                <li><strong>Keunikan:</strong> Daging sapi dimasak dengan teknik khusus menggunakan bumbu rempah yang kaya, menghasilkan tekstur yang lembut dan rasa yang mendalam.</li>
+            </ul>
+
+            <h2>2. Sate Kambing Gresik</h2>
+            <p>
+                Sate kambing Gresik memiliki cita rasa yang khas dan berbeda dari sate kambing daerah lain.
+            </p>
+
+            <ul>
+                <li><strong>Karakteristik:</strong> Menggunakan daging kambing pilihan yang dibumbui dengan bumbu kacang khas Gresik yang gurih dan sedikit manis.</li>
+                <li><strong>Penyajian:</strong> Disajikan dengan lontong, sambal kecap, dan acar timun untuk menambah kesegaran.</li>
+            </ul>
+
+            <h2>3. Otak-Otak Bandeng</h2>
+            <p>
+                Sebagai kota pesisir, Gresik terkenal dengan olahan ikan bandengnya yang istimewa.
+            </p>
+
+            <ul>
+                <li><strong>Proses Pembuatan:</strong> Daging ikan bandeng yang sudah dihaluskan dicampur dengan bumbu rempah, kemudian dimasukkan kembali ke dalam kepala ikan bandeng dan dikukus atau dibakar.</li>
+                <li><strong>Cita Rasa:</strong> Gurih, sedikit pedas, dengan aroma rempah yang khas.</li>
+            </ul>
+
+            <h2>4. Pudding Gresik</h2>
+            <p>
+                Pudding Gresik adalah hidangan penutup yang menjadi kebanggaan daerah ini.
+            </p>
+
+            <div class="my-8 rounded-xl overflow-hidden">
+                <img alt="Pudding Gresik" class="w-full h-auto object-cover" src="/home/fatah/.gemini/antigravity/brain/8eadba15-9469-46d7-8033-faa5ecb5055d/pudding_gresik_1770230903155.png"/>
+            </div>
+
+            <ul>
+                <li><strong>Karakteristik:</strong> Pudding dengan tekstur lembut dan rasa yang manis, sering dibuat dengan berbagai varian rasa dan warna yang menarik.</li>
+                <li><strong>Popularitas:</strong> Menjadi oleh-oleh khas yang banyak dicari wisatawan yang berkunjung ke Gresik.</li>
+            </ul>
+
+            <h2>5. Bonggolan</h2>
+            <p>
+                Bonggolan adalah jajanan tradisional Gresik yang terbuat dari tepung beras.
+            </p>
+
+            <ul>
+                <li><strong>Bahan:</strong> Tepung beras yang dibentuk bulat dan digoreng hingga renyah.</li>
+                <li><strong>Penyajian:</strong> Biasanya disajikan dengan gula merah cair atau kelapa parut.</li>
+            </ul>
+
+            <h2>6. Legalitas dan Perlindungan Budaya</h2>
+            <p>
+                Seperti halnya Lamongan, Pemerintah Kabupaten Gresik juga telah mengambil langkah penting dalam melindungi warisan kulinernya.
+            </p>
+
+            <ul>
+                <li><strong>Status Hukum:</strong> Kuliner khas Gresik telah mendapatkan perlindungan hukum dan paten resmi untuk menjaga keaslian dan mencegah klaim dari pihak lain.</li>
+                <li><strong>Tujuan:</strong> Melestarikan warisan budaya kuliner, memberdayakan ekonomi lokal, dan mempertahankan identitas daerah.</li>
+            </ul>
+
+            <h2>7. Analisis Budaya: Kuliner sebagai Identitas</h2>
+            <p>
+                Kuliner Gresik mencerminkan perpaduan budaya pesisir, perdagangan, dan tradisi Islam yang kuat di wilayah ini.
+            </p>
+
+            <ul>
+                <li><strong>Pengaruh Maritim:</strong> Sebagai kota pelabuhan, Gresik memiliki akses ke berbagai bahan makanan laut yang berkualitas.</li>
+                <li><strong>Tradisi Pedagang:</strong> Kuliner Gresik berkembang dari tradisi pedagang yang membawa berbagai pengaruh rempah dan teknik memasak.</li>
+                <li><strong>Identitas Lokal:</strong> Setiap hidangan memiliki cerita dan makna yang terkait dengan sejarah dan budaya masyarakat Gresik.</li>
+            </ul>
+
+            <p>
+                Dengan kekayaan kuliner yang beragam dan perlindungan hukum yang kuat, Gresik membuktikan bahwa kuliner adalah bagian integral dari identitas dan kebanggaan daerah.
+            </p>
+        </div>
+
+        <!-- Share Section -->
+        <div class="mt-16 pt-8 border-t border-gray-200 dark:border-gray-700">
+            <h3 class="text-lg font-semibold mb-4">Share this article</h3>
+            <div class="flex gap-4">
+                <a href="#" class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-primary hover:text-white transition-colors">
+                    <span class="material-symbols-outlined text-sm">share</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Related Articles -->
+        <div class="mt-16">
+            <h3 class="text-2xl font-display font-semibold mb-8">Related Articles</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <a href="article-1.html" class="group">
+                    <div class="relative h-48 rounded-xl overflow-hidden mb-4">
+                        <img alt="Soto Lamongan" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="/home/fatah/.gemini/antigravity/brain/8eadba15-9469-46d7-8033-faa5ecb5055d/soto_lamongan_1770230836619.png"/>
+                    </div>
+                    <h4 class="text-xl font-display font-medium text-gray-900 dark:text-white mb-2 group-hover:text-primary transition-colors">
+                        Menelusuri Jejak Lezat Kuliner Khas Lamongan
+                    </h4>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">
+                        Sejarah, cita rasa, dan legalitas budaya kuliner Lamongan...
+                    </p>
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-black text-white pt-20 pb-10 rounded-t-3xl mx-2 md:mx-4 mt-20">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 border-b border-gray-800 pb-16">
+            <div class="lg:col-span-1">
+                <div class="flex items-center gap-2 mb-6">
+                    <span class="material-symbols-outlined text-3xl text-white">chair</span>
+                    <span class="text-2xl font-bold font-display tracking-tight">Aunara</span>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                    Furniture that feels like home, designed to blend seamlessly into your life and space with effortless charm.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-bold text-sm uppercase tracking-wider mb-6 text-gray-500">Company</h4>
+                <ul class="space-y-4 text-sm text-gray-300">
+                    <li><a class="hover:text-primary transition-colors" href="#">About Aunara</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Sustainability</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Press</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-sm uppercase tracking-wider mb-6 text-gray-500">Shop</h4>
+                <ul class="space-y-4 text-sm text-gray-300">
+                    <li><a class="hover:text-primary transition-colors" href="shop.html">Living Room</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="shop.html">Bedroom</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="shop.html">Office</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-sm uppercase tracking-wider mb-6 text-gray-500">Help</h4>
+                <ul class="space-y-4 text-sm text-gray-300">
+                    <li><a class="hover:text-primary transition-colors" href="#">FAQ</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Contact Support</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 mt-10 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+            <p>Copyright @2025 Aunara. All rights reserved.</p>
+            <div class="flex gap-6 mt-4 md:mt-0">
+                <a class="hover:text-white" href="#">Terms & Conditions</a>
+                <a class="hover:text-white" href="#">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav">
+        <div class="grid grid-cols-5 h-full">
+            <a href="index.html">
+                <span class="material-icons-outlined">home</span>
+                <span>Home</span>
+            </a>
+            <a href="collection.html">
+                <span class="material-icons-outlined">grid_view</span>
+                <span>Collection</span>
+            </a>
+            <a href="shop.html">
+                <span class="material-icons-outlined">shopping_bag</span>
+                <span>Shop</span>
+            </a>
+            <a href="blog.html" class="active">
+                <span class="material-icons-outlined">article</span>
+                <span>Blog</span>
+            </a>
+            <a href="#" onclick="openWhatsApp('Contact from Blog'); return false;">
+                <span class="material-icons-outlined">chat</span>
+                <span>Contact</span>
+            </a>
+        </div>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>

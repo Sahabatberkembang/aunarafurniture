@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Shop - Aunara</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#6d4c41",
+                        "primary-dark": "#5d4037",
+                        "secondary": "#f4f1ea",
+                        "text-main": "#2d2d2d",
+                        "background-light": "#fdfbf7",
+                        "background-dark": "#1a1a1a",
+                        "surface-light": "#f4f1ea",
+                        "surface-dark": "#262626",
+                    },
+                    fontFamily: {
+                        sans: ['"DM Sans"', 'sans-serif'],
+                        display: ['"Playfair Display"', 'serif'],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        'xl': '1rem',
+                        '2xl': '1.5rem',
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Mobile Bottom Navigation */
+        .mobile-bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            border-top: 1px solid #e5e7eb;
+            z-index: 50;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-bottom-nav {
+                display: block;
+            }
+            body {
+                padding-bottom: 70px;
+            }
+        }
+
+        .mobile-bottom-nav a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem;
+            color: #6b7280;
+            font-size: 0.75rem;
+            transition: all 0.3s;
+        }
+
+        .mobile-bottom-nav a.active {
+            color: #6d4c41;
+        }
+
+        .mobile-bottom-nav a .material-icons-outlined {
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-gray-200 font-sans antialiased transition-colors duration-300">
+    
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-3xl text-primary">chair</span>
+                <a href="index.html" class="text-2xl font-bold font-display tracking-tight text-gray-900 dark:text-white">Aunara</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600 dark:text-gray-300">
+                <a class="relative py-1 hover:text-primary transition-colors after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full" href="index.html">Home</a>
+                <a class="relative py-1 hover:text-primary transition-colors after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full" href="collection.html">Collection</a>
+                <a class="relative py-1 hover:text-primary transition-colors after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full" href="rooms.html">Rooms</a>
+                <a class="relative py-1 hover:text-primary transition-colors after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full text-primary after:w-full" href="shop.html">Shop</a>
+                <a class="relative py-1 hover:text-primary transition-colors after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full" href="blog.html">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-10">
+        <!-- Best Sellers Section Content -->
+        <section class="max-w-7xl mx-auto px-6 py-20 bg-surface-light dark:bg-surface-dark/20 rounded-3xl mb-24">
+            <div class="text-center mb-16">
+                <span class="text-xs font-bold tracking-widest text-primary uppercase mb-3 block">Full Collection</span>
+                <h2 class="text-4xl md:text-5xl font-display text-gray-900 dark:text-white mb-6">
+                    Timeless Pieces For Modern Living
+                </h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg font-light leading-relaxed">
+                    Explore our furniture, crafted with care to bring comfort, beauty, and function into your everyday space.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Product 1: Cozy Log Sofa -->
+                <div class="group bg-white dark:bg-surface-dark rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-800">
+                    <div class="h-64 overflow-hidden bg-gray-50 dark:bg-black/20 flex items-center justify-center p-6 relative">
+                        <img alt="Cozy Log Sofa" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMPCE984xt7i_1eUNqzfYnDEi0Z-g8QDBCyTVjimz3a-9fPCNsqcFxsumHy4IjTalrAU_IG2yZ7Dad3rsH4G2Z6oh4Wq5PBRzI7F_jWvvqd_szeh5ruEUge-HpUBAhvqlAYClGRJw0ZC5bcd8yl6Rsv5rh0QmkIFMth1W3K1TH18OGq_QIEytIekaD57Mbm679AykRQE7J7JRqshcPPPQAnBWbKxhYBZRtwctaYNgHUgh85ftA3Sry8JbJ0MpsYz6nuCCSZB_SvlM"/>
+                        <div class="absolute top-4 right-4 bg-white dark:bg-surface-dark rounded-full p-2 shadow-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="material-symbols-outlined text-primary text-sm">favorite</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-display font-medium text-gray-900 dark:text-white">Cozy Log Sofa</h3>
+                            <span class="font-bold text-primary">$1,202</span>
+                        </div>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-6 line-clamp-2 h-10">
+                            A rustic-modern sofa made with solid wood and soft cushions, perfect for relaxing.
+                        </p>
+                        <button onclick="openWhatsApp('Cozy Log Sofa - $1,202')" class="w-full py-3 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white rounded-lg hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors font-medium text-sm">
+                            Order via WhatsApp
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product 2: Sculpted Chair -->
+                <div class="group bg-white dark:bg-surface-dark rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-800">
+                    <div class="h-64 overflow-hidden bg-gray-50 dark:bg-black/20 flex items-center justify-center p-6 relative">
+                        <img alt="Sculpted Wood Chair" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqoxZKyd0-78zEpC6KPpy5-6P20wb8sTXItRNd4BOyY49gddKCF3xm2NK9SAORAMNRr1twYv1UYI4S32fTdYRCUdv1XcOrmLC0lnN__iZJDUTd6imgQufw1fcxUMkrtkK8Br-81AshM1jYb_0E2W_lc8XZaMXiVtEEHXOwfZdjQuKLNfffCcTUMU6HIGrsVpmLYnQeTbrKV-lFzyNGlC4clXJWwaYfwAyY8lfiy9SoQ6uJgq5BqYIoMpDLisUxEOxcjfwuRkcbjvk"/>
+                        <div class="absolute top-4 right-4 bg-white dark:bg-surface-dark rounded-full p-2 shadow-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="material-symbols-outlined text-primary text-sm">favorite</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-display font-medium text-gray-900 dark:text-white">Sculpted Chair</h3>
+                            <span class="font-bold text-primary">$450</span>
+                        </div>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-6 line-clamp-2 h-10">
+                            Hand-carved from a single piece of wood, blending natural form with modern function.
+                        </p>
+                        <button onclick="openWhatsApp('Sculpted Chair - $450')" class="w-full py-3 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white rounded-lg hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors font-medium text-sm">
+                            Order via WhatsApp
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product 3: Patch Armchair -->
+                <div class="group bg-white dark:bg-surface-dark rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-800">
+                    <div class="h-64 overflow-hidden bg-gray-50 dark:bg-black/20 flex items-center justify-center p-6 relative">
+                        <img alt="Vintage Patch Armchair" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQBea3fAOcNJg0h8AkUjuQwSjKCxe6clUOGEsOX8UzDo0evOrfvardqcvSGQq_PYOjs7FLCAlW2wquM5XfPd8d4puiMy4Qc88zYv2vqe-T5qSqJbpULa-TqjNgLxeds-ZRbkfxDeW-GpjyLVsPolBqjWvrTeL2Qqh10OXsAfi16hnGPyp95qznc3Iq7C37lKdELPKp7slGU3EGH15mkLs7FTRuJiA2NLyRktx_xI5slpGNE9ZHYM4Vwq_f6CWGMFJqbc5eGO1mZ0A"/>
+                        <div class="absolute top-4 right-4 bg-white dark:bg-surface-dark rounded-full p-2 shadow-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="material-symbols-outlined text-primary text-sm">favorite</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-display font-medium text-gray-900 dark:text-white">Patch Armchair</h3>
+                            <span class="font-bold text-primary">$890</span>
+                        </div>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-6 line-clamp-2 h-10">
+                            A uniquely upholstered armchair with a charming, vintage-inspired design.
+                        </p>
+                        <button onclick="openWhatsApp('Patch Armchair - $890')" class="w-full py-3 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white rounded-lg hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors font-medium text-sm">
+                            Order via WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 4: Modern Dining Table -->
+                <div class="group bg-white dark:bg-surface-dark rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-800">
+                    <div class="h-64 overflow-hidden bg-gray-50 dark:bg-black/20 flex items-center justify-center p-6 relative">
+                        <img alt="Modern Dining Table" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwAgkd_KbXH5JZ6ac8SZwy9xCNVpMjVcm-QJ1oeFe6z-PDe3exBdnxUdlWdbIMn9jt-8zEf43lKClVW_fxrp-4nWi5tzcO8QUJW47C1YV-ERzDSZ382n7r1vVDPnljyudxru9efMdyWLCvK7o8ULmR3SL3x1-oJtEY37Mnc4wXv-PUD1ZUEwT-z0IMQ-j62pI4OiyrK_tY6egZazQAUI9x0l7hu9g7NWEF4_a4rvir22G5GuhOeIeDYjPbO5zKD87T49uYeqllNv4"/>
+                        <div class="absolute top-4 right-4 bg-white dark:bg-surface-dark rounded-full p-2 shadow-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="material-symbols-outlined text-primary text-sm">favorite</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-display font-medium text-gray-900 dark:text-white">Modern Dining Table</h3>
+                            <span class="font-bold text-primary">$1,850</span>
+                        </div>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-6 line-clamp-2 h-10">
+                            Elegant solid wood dining table with clean lines, perfect for family gatherings.
+                        </p>
+                        <button onclick="openWhatsApp('Modern Dining Table - $1,850')" class="w-full py-3 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white rounded-lg hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors font-medium text-sm">
+                            Order via WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 5: Minimalist Bookshelf -->
+                <div class="group bg-white dark:bg-surface-dark rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-800">
+                    <div class="h-64 overflow-hidden bg-gray-50 dark:bg-black/20 flex items-center justify-center p-6 relative">
+                        <img alt="Minimalist Bookshelf" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqoxZKyd0-78zEpC6KPpy5-6P20wb8sTXItRNd4BOyY49gddKCF3xm2NK9SAORAMNRr1twYv1UYI4S32fTdYRCUdv1XcOrmLC0lnN__iZJDUTd6imgQufw1fcxUMkrtkK8Br-81AshM1jYb_0E2W_lc8XZaMXiVtEEHXOwfZdjQuKLNfffCcTUMU6HIGrsVpmLYnQeTbrKV-lFzyNGlC4clXJWwaYfwAyY8lfiy9SoQ6uJgq5BqYIoMpDLisUxEOxcjfwuRkcbjvk"/>
+                        <div class="absolute top-4 right-4 bg-white dark:bg-surface-dark rounded-full p-2 shadow-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="material-symbols-outlined text-primary text-sm">favorite</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-display font-medium text-gray-900 dark:text-white">Minimalist Bookshelf</h3>
+                            <span class="font-bold text-primary">$680</span>
+                        </div>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-6 line-clamp-2 h-10">
+                            Sleek and functional bookshelf with open shelving for displaying your favorite items.
+                        </p>
+                        <button onclick="openWhatsApp('Minimalist Bookshelf - $680')" class="w-full py-3 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white rounded-lg hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors font-medium text-sm">
+                            Order via WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 6: Luxury Bed Frame -->
+                <div class="group bg-white dark:bg-surface-dark rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-800">
+                    <div class="h-64 overflow-hidden bg-gray-50 dark:bg-black/20 flex items-center justify-center p-6 relative">
+                        <img alt="Luxury Bed Frame" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMPCE984xt7i_1eUNqzfYnDEi0Z-g8QDBCyTVjimz3a-9fPCNsqcFxsumHy4IjTalrAU_IG2yZ7Dad3rsH4G2Z6oh4Wq5PBRzI7F_jWvvqd_szeh5ruEUge-HpUBAhvqlAYClGRJw0ZC5bcd8yl6Rsv5rh0QmkIFMth1W3K1TH18OGq_QIEytIekaD57Mbm679AykRQE7J7JRqshcPPPQAnBWbKxhYBZRtwctaYNgHUgh85ftA3Sry8JbJ0MpsYz6nuCCSZB_SvlM"/>
+                        <div class="absolute top-4 right-4 bg-white dark:bg-surface-dark rounded-full p-2 shadow-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="material-symbols-outlined text-primary text-sm">favorite</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-display font-medium text-gray-900 dark:text-white">Luxury Bed Frame</h3>
+                            <span class="font-bold text-primary">$2,450</span>
+                        </div>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-6 line-clamp-2 h-10">
+                            Premium solid wood bed frame with elegant headboard design for ultimate comfort.
+                        </p>
+                        <button onclick="openWhatsApp('Luxury Bed Frame - $2,450')" class="w-full py-3 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white rounded-lg hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors font-medium text-sm">
+                            Order via WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <p class="text-gray-600 dark:text-gray-400 mb-6">Can't find what you're looking for?</p>
+                <button onclick="openWhatsApp('I would like to inquire about custom furniture')" class="bg-primary text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-dark transition-colors">
+                    Contact Us for Custom Orders
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-black text-white pt-20 pb-10 rounded-t-3xl mx-2 md:mx-4">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 border-b border-gray-800 pb-16">
+            <div class="lg:col-span-1">
+                <div class="flex items-center gap-2 mb-6">
+                    <span class="material-symbols-outlined text-3xl text-white">chair</span>
+                    <span class="text-2xl font-bold font-display tracking-tight">Aunara</span>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                    Furniture that feels like home, designed to blend seamlessly into your life and space with effortless charm.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-bold text-sm uppercase tracking-wider mb-6 text-gray-500">Company</h4>
+                <ul class="space-y-4 text-sm text-gray-300">
+                    <li><a class="hover:text-primary transition-colors" href="#">About Aunara</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Sustainability</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Press</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-sm uppercase tracking-wider mb-6 text-gray-500">Shop</h4>
+                <ul class="space-y-4 text-sm text-gray-300">
+                    <li><a class="hover:text-primary transition-colors" href="shop.html">Living Room</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="shop.html">Bedroom</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="shop.html">Office</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-sm uppercase tracking-wider mb-6 text-gray-500">Help</h4>
+                <ul class="space-y-4 text-sm text-gray-300">
+                    <li><a class="hover:text-primary transition-colors" href="#">FAQ</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Contact Support</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 mt-10 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+            <p>Copyright @2025 Aunara. All rights reserved.</p>
+            <div class="flex gap-6 mt-4 md:mt-0">
+                <a class="hover:text-white" href="#">Terms & Conditions</a>
+                <a class="hover:text-white" href="#">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav">
+        <div class="grid grid-cols-5 h-full">
+            <a href="index.html">
+                <span class="material-icons-outlined">home</span>
+                <span>Home</span>
+            </a>
+            <a href="collection.html">
+                <span class="material-icons-outlined">grid_view</span>
+                <span>Collection</span>
+            </a>
+            <a href="shop.html" class="active">
+                <span class="material-icons-outlined">shopping_bag</span>
+                <span>Shop</span>
+            </a>
+            <a href="blog.html">
+                <span class="material-icons-outlined">article</span>
+                <span>Blog</span>
+            </a>
+            <a href="#" onclick="openWhatsApp('Contact from Shop'); return false;">
+                <span class="material-icons-outlined">chat</span>
+                <span>Contact</span>
+            </a>
+        </div>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>

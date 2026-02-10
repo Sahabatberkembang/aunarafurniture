@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Menelusuri Jejak Lezat Kuliner Khas Lamongan - Aunara Blog</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&family=Playfair+Display:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#6d4c41",
+              "primary-dark": "#5d4037",
+              secondary: "#f4f1ea",
+              "text-main": "#2d2d2d",
+              "background-light": "#fdfbf7",
+              "background-dark": "#1a1a1a",
+              "surface-light": "#f4f1ea",
+              "surface-dark": "#262626",
+            },
+            fontFamily: {
+              sans: ['"DM Sans"', "sans-serif"],
+              display: ['"Playfair Display"', "serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              xl: "1rem",
+              "2xl": "1.5rem",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      /* Article Content Styling */
+      .article-content {
+        line-height: 1.8;
+      }
+
+      .article-content h2 {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-top: 2.5rem;
+        margin-bottom: 1.5rem;
+        color: #2d2d2d;
+      }
+
+      .article-content h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        color: #2d2d2d;
+      }
+
+      .article-content p {
+        margin-bottom: 1.5rem;
+        font-size: 1.125rem;
+        color: #4a5568;
+      }
+
+      .article-content ul,
+      .article-content ol {
+        margin-bottom: 1.5rem;
+        padding-left: 2rem;
+      }
+
+      .article-content li {
+        margin-bottom: 0.75rem;
+        font-size: 1.125rem;
+        color: #4a5568;
+      }
+
+      .article-content blockquote {
+        border-left: 4px solid #6d4c41;
+        padding-left: 1.5rem;
+        margin: 2rem 0;
+        font-style: italic;
+        color: #718096;
+      }
+
+      /* Mobile Bottom Navigation */
+      .mobile-bottom-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: white;
+        border-top: 1px solid #e5e7eb;
+        z-index: 50;
+        display: none;
+      }
+
+      @media (max-width: 768px) {
+        .mobile-bottom-nav {
+          display: block;
+        }
+        body {
+          padding-bottom: 70px;
+        }
+      }
+
+      .mobile-bottom-nav a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem;
+        color: #6b7280;
+        font-size: 0.75rem;
+        transition: all 0.3s;
+      }
+
+      .mobile-bottom-nav a.active {
+        color: #6d4c41;
+      }
+
+      .mobile-bottom-nav a .material-icons-outlined {
+        font-size: 1.5rem;
+        margin-bottom: 0.25rem;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-text-main dark:text-gray-200 font-sans antialiased transition-colors duration-300"
+  >
+    <!-- Navigation -->
+    <nav
+      class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-100 dark:border-gray-800"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-3xl text-primary"
+            >chair</span
+          >
+          <a
+            href="index.html"
+            class="text-2xl font-bold font-display tracking-tight text-gray-900 dark:text-white"
+            >Aunara</a
+          >
+        </div>
+        <div
+          class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600 dark:text-gray-300"
+        >
+          <a
+            class="relative py-1 hover:text-primary transition-colors after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
+            href="index.html"
+            >Home</a
+          >
+          <a
+            class="relative py-1 hover:text-primary transition-colors after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
+            href="collection.html"
+            >Collection</a
+          >
+          <a
+            class="relative py-1 hover:text-primary transition-colors after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
+            href="rooms.html"
+            >Rooms</a
+          >
+          <a
+            class="relative py-1 hover:text-primary transition-colors after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
+            href="shop.html"
+            >Shop</a
+          >
+          <a
+            class="relative py-1 hover:text-primary transition-colors after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full text-primary after:w-full"
+            href="blog.html"
+            >Blog</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Article Header -->
+    <article class="max-w-4xl mx-auto px-6 py-16">
+      <div class="mb-8">
+        <a
+          href="blog.html"
+          class="inline-flex items-center text-sm font-medium text-primary hover:text-primary-dark transition-colors mb-6"
+        >
+          <span class="material-symbols-outlined text-sm mr-1">arrow_back</span>
+          Back to Blog
+        </a>
+        <div class="mb-6">
+          <span
+            class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider"
+          >
+            Kuliner & Budaya
+          </span>
+        </div>
+        <h1
+          class="text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-white mb-6 leading-tight"
+        >
+          Menelusuri Jejak Lezat Kuliner Khas Lamongan: Sejarah, Cita Rasa, dan
+          Legalitas Budaya
+        </h1>
+        <div
+          class="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400"
+        >
+          <span>By Tim Redaksi</span>
+          <span>•</span>
+          <span>Februari 5, 2026</span>
+          <span>•</span>
+          <span>10 min read</span>
+        </div>
+      </div>
+
+      <!-- Featured Image -->
+      <div class="mb-12 rounded-2xl overflow-hidden">
+        <img
+          alt="Soto Lamongan"
+          class="w-full h-[400px] md:h-[500px] object-cover"
+          src="/home/fatah/.gemini/antigravity/brain/8eadba15-9469-46d7-8033-faa5ecb5055d/soto_lamongan_1770230836619.png"
+        />
+      </div>
+
+      <!-- Article Content -->
+      <div class="article-content prose prose-lg max-w-none">
+        <p class="text-xl font-light text-gray-700 dark:text-gray-300 mb-8">
+          Kabupaten Lamongan di Jawa Timur tidak hanya dikenal sebagai kota
+          santri, tetapi juga surganya kuliner yang melegenda. Berdasarkan
+          pemetaan budaya kuliner setempat, terdapat tiga hidangan utama yang
+          menjadi ikon identitas daerah ini: Soto Ayam Lamongan, Nasi Boran, dan
+          Tahu Campur Lamongan. Tidak hanya soal rasa, kuliner ini memiliki
+          sejarah panjang hingga perlindungan hukum yang kuat.
+        </p>
+
+        <p>
+          Berikut adalah ulasan lengkapnya berdasarkan peta konsep kuliner
+          Lamongan:
+        </p>
+
+        <h2>1. Soto Ayam Lamongan: Sang Legenda Berkuah Kuning</h2>
+        <p>
+          Soto Lamongan mungkin adalah kuliner yang paling dikenal luas di
+          seluruh Indonesia. Hidangan ini memiliki akar sejarah dan
+          karakteristik yang kuat.
+        </p>
+
+        <div class="my-8 rounded-xl overflow-hidden">
+          <img
+            alt="Soto Lamongan"
+            class="w-full h-auto object-cover"
+            src="/home/fatah/.gemini/antigravity/brain/8eadba15-9469-46d7-8033-faa5ecb5055d/soto_lamongan_1770230836619.png"
+          />
+        </div>
+
+        <ul>
+          <li>
+            <strong>Sejarah:</strong> Popularitas Soto Lamongan mulai meroket
+            pada era 1980-an. Asal-usul kuliner ini dapat ditelusuri ke Dusun
+            Kebon Tengah dan memiliki kaitan sejarah dengan sosok Sunan Giri,
+            salah satu Wali Songo.
+          </li>
+          <li>
+            <strong>Karakteristik Unik:</strong> Yang membedakan soto ini dari
+            soto daerah lain adalah penggunaan bubuk <strong>koya</strong> yang
+            gurih, yang terbuat dari kerupuk udang dan bawang putih. Isiannya
+            terdiri dari irisan ayam serta jeroan, yang disiram dengan kuah
+            kaldu kuning yang kaya rempah.
+          </li>
+        </ul>
+
+        <h2>2. Nasi Boran: Tradisi Para Perempuan Tangguh</h2>
+        <p>
+          Nasi Boran adalah kuliner yang eksklusif dan jarang ditemukan di luar
+          wilayah Lamongan karena keterikatannya dengan tradisi lokal.
+        </p>
+
+        <div class="my-8 rounded-xl overflow-hidden">
+          <img
+            alt="Nasi Boran"
+            class="w-full h-auto object-cover"
+            src="/home/fatah/.gemini/antigravity/brain/8eadba15-9469-46d7-8033-faa5ecb5055d/nasi_boran_1770230853135.png"
+          />
+        </div>
+
+        <ul>
+          <li>
+            <strong>Sejarah dan Asal Usul:</strong> Kuliner ini berasal dari
+            Desa Kaotan dan Sumber Rejo. Sejarahnya lekat dengan tradisi
+            pedagang perempuan yang menjajakan makanan ini. Nama "Boran" sendiri
+            diambil dari wadah nasi yang terbuat dari anyaman bambu yang
+            digendong oleh para penjualnya.
+          </li>
+          <li>
+            <strong>Komponen Unik:</strong> Seporsi Nasi Boran biasanya terdiri
+            dari bumbu sambal khas yang pedas dan kaya rasa, serta berbagai lauk
+            empuk. Salah satu lauk ikoniknya adalah ikan sili (meski dalam peta
+            konsep tertulis "lauk empuk" dan "ikan...", ikan sili adalah
+            pasangan sejatinya).
+          </li>
+        </ul>
+
+        <h2>3. Tahu Campur Lamongan: Perpaduan Rasa yang Kompleks</h2>
+        <p>
+          Tahu Campur adalah representasi dari perpaduan budaya dan kreativitas
+          masyarakat Lamongan dalam mengolah bahan pangan.
+        </p>
+
+        <div class="my-8 rounded-xl overflow-hidden">
+          <img
+            alt="Tahu Campur Lamongan"
+            class="w-full h-auto object-cover"
+            src="/home/fatah/.gemini/antigravity/brain/8eadba15-9469-46d7-8033-faa5ecb5055d/tahu_campur_lamongan_1770230869694.png"
+          />
+        </div>
+
+        <ul>
+          <li>
+            <strong>Asal Usul:</strong> Hidangan ini diperkirakan muncul sekitar
+            tahun 1900-an dan berasal dari Desa Padenganploso. Menariknya,
+            sejarah kuliner ini juga menyinggung peran koki Belanda di Surabaya,
+            yang menandakan adanya akulturasi dalam penciptaannya.
+          </li>
+          <li>
+            <strong>Bahan Utama:</strong> Ciri khas utamanya adalah penggunaan
+            daging sapi bagian sengkel (urat) yang kenyal. Kuahnya menggunakan
+            petis udang yang memberikan aroma dan rasa sedap, disajikan bersama
+            mie kuning dan selada segar.
+          </li>
+          <li>
+            <strong>Lentho Singkong:</strong> Komponen yang tak boleh absen
+            adalah <em>Lentho</em>. Ini adalah perkedel yang terbuat dari
+            singkong giling halus yang dibumbui bawang putih dan merah, kemudian
+            digoreng dengan bentuk lonjong atau kotak.
+          </li>
+        </ul>
+
+        <h2>4. Kebijakan Paten dan Legalitas: Melindungi Warisan Rasa</h2>
+        <p>
+          Pemerintah Kabupaten Lamongan menyadari pentingnya melindungi aset
+          budaya ini agar tidak diklaim oleh pihak lain dan tetap lestari.
+        </p>
+
+        <ul>
+          <li>
+            <strong>Status Hukum:</strong> Kuliner khas Lamongan telah
+            mendapatkan paten resmi pada tahun 2021, dengan surat penerimaan
+            yang tercatat per tanggal 27 Desember 2018 yang dikeluarkan oleh
+            Kementerian Hukum dan HAM (Kemenkumham).
+          </li>
+          <li>
+            <strong>Tujuan Kebijakan:</strong> Langkah legalitas ini diambil
+            dengan tujuan utama untuk mencegah klaim asing atas kuliner asli
+            daerah, melestarikan budaya lokal, serta memberdayakan ekonomi
+            masyarakat setempat.
+          </li>
+        </ul>
+
+        <h2>5. Analisis Hermeneutika: Makna di Balik Rasa</h2>
+        <p>
+          Kuliner Lamongan tidak hanya dipandang sebagai makanan, tetapi juga
+          teks sosial yang bisa dimaknai melalui pendekatan filsafat
+          (hermeneutika):
+        </p>
+
+        <ul>
+          <li>
+            <strong>Perspektif Ricœur:</strong> Kuliner dilihat sebagai "Teks
+            Sosial" yang bisa dibaca untuk memahami sejarah masyarakatnya.
+          </li>
+          <li>
+            <strong>Perspektif Gadamer:</strong> Melihat kuliner melalui "Makna
+            Tindakan", yaitu bagaimana proses memasak dan berdagang menjadi
+            tindakan budaya.
+          </li>
+          <li>
+            <strong>Perspektif Taylor:</strong> Menempatkan kuliner sebagai
+            bagian dari "Identitas Budaya" masyarakat Lamongan yang
+            membedakannya dengan daerah lain.
+          </li>
+        </ul>
+
+        <p>
+          Dengan cita rasa yang otentik dan perlindungan hukum yang jelas,
+          kuliner khas Lamongan membuktikan bahwa makanan adalah bagian tak
+          terpisahkan dari jati diri sebuah daerah.
+        </p>
+      </div>
+
+      <!-- Share Section -->
+      <div class="mt-16 pt-8 border-t border-gray-200 dark:border-gray-700">
+        <h3 class="text-lg font-semibold mb-4">Share this article</h3>
+        <div class="flex gap-4">
+          <a
+            href="#"
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-primary hover:text-white transition-colors"
+          >
+            <span class="material-symbols-outlined text-sm">share</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Related Articles -->
+      <div class="mt-16">
+        <h3 class="text-2xl font-display font-semibold mb-8">
+          Related Articles
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <a href="article-2.html" class="group">
+            <div class="relative h-48 rounded-xl overflow-hidden mb-4">
+              <img
+                alt="Nasi Krawu Gresik"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                src="/home/fatah/.gemini/antigravity/brain/8eadba15-9469-46d7-8033-faa5ecb5055d/nasi_krawu_gresik_1770230887440.png"
+              />
+            </div>
+            <h4
+              class="text-xl font-display font-medium text-gray-900 dark:text-white mb-2 group-hover:text-primary transition-colors"
+            >
+              Kuliner Khas Gresik: Warisan Cita Rasa yang Terlindungi
+            </h4>
+            <p class="text-gray-600 dark:text-gray-400 text-sm">
+              Dari Nasi Krawu hingga Pudding Gresik, menelusuri kekayaan kuliner
+              pesisir...
+            </p>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Footer -->
+    <footer
+      class="bg-gray-900 dark:bg-black text-white pt-20 pb-10 rounded-t-3xl mx-2 md:mx-4 mt-20"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 border-b border-gray-800 pb-16"
+      >
+        <div class="lg:col-span-1">
+          <div class="flex items-center gap-2 mb-6">
+            <span class="material-symbols-outlined text-3xl text-white"
+              >chair</span
+            >
+            <span class="text-2xl font-bold font-display tracking-tight"
+              >Aunara</span
+            >
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">
+            Furniture that feels like home, designed to blend seamlessly into
+            your life and space with effortless charm.
+          </p>
+        </div>
+        <div>
+          <h4
+            class="font-bold text-sm uppercase tracking-wider mb-6 text-gray-500"
+          >
+            Company
+          </h4>
+          <ul class="space-y-4 text-sm text-gray-300">
+            <li>
+              <a class="hover:text-primary transition-colors" href="#"
+                >About Aunara</a
+              >
+            </li>
+            <li>
+              <a class="hover:text-primary transition-colors" href="#"
+                >Sustainability</a
+              >
+            </li>
+            <li>
+              <a class="hover:text-primary transition-colors" href="#">Press</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            class="font-bold text-sm uppercase tracking-wider mb-6 text-gray-500"
+          >
+            Shop
+          </h4>
+          <ul class="space-y-4 text-sm text-gray-300">
+            <li>
+              <a class="hover:text-primary transition-colors" href="shop.html"
+                >Living Room</a
+              >
+            </li>
+            <li>
+              <a class="hover:text-primary transition-colors" href="shop.html"
+                >Bedroom</a
+              >
+            </li>
+            <li>
+              <a class="hover:text-primary transition-colors" href="shop.html"
+                >Office</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            class="font-bold text-sm uppercase tracking-wider mb-6 text-gray-500"
+          >
+            Help
+          </h4>
+          <ul class="space-y-4 text-sm text-gray-300">
+            <li>
+              <a class="hover:text-primary transition-colors" href="#">FAQ</a>
+            </li>
+            <li>
+              <a class="hover:text-primary transition-colors" href="#"
+                >Contact Support</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="max-w-7xl mx-auto px-6 mt-10 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500"
+      >
+        <p>Copyright @2025 Aunara. All rights reserved.</p>
+        <div class="flex gap-6 mt-4 md:mt-0">
+          <a class="hover:text-white" href="#">Terms & Conditions</a>
+          <a class="hover:text-white" href="#">Privacy Policy</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav">
+      <div class="grid grid-cols-5 h-full">
+        <a href="index.html">
+          <span class="material-icons-outlined">home</span>
+          <span>Home</span>
+        </a>
+        <a href="collection.html">
+          <span class="material-icons-outlined">grid_view</span>
+          <span>Collection</span>
+        </a>
+        <a href="shop.html">
+          <span class="material-icons-outlined">shopping_bag</span>
+          <span>Shop</span>
+        </a>
+        <a href="blog.html" class="active">
+          <span class="material-icons-outlined">article</span>
+          <span>Blog</span>
+        </a>
+        <a
+          href="#"
+          onclick="
+            openWhatsApp('Contact from Blog');
+            return false;
+          "
+        >
+          <span class="material-icons-outlined">chat</span>
+          <span>Contact</span>
+        </a>
+      </div>
+    </nav>
+
+    <script src="script.js"></script>
+  </body>
+</html>

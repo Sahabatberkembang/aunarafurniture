@@ -1,0 +1,764 @@
+<!doctype html>
+<html class="scroll-smooth" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Aunara | Timeless Furniture for Modern Living</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#6B5B4B",
+              "background-light": "#F9F8F6",
+              "background-dark": "#121212",
+              "surface-light": "#FFFFFF",
+              "surface-dark": "#1E1E1E",
+            },
+            fontFamily: {
+              display: ["Playfair Display", "serif"],
+              sans: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              xl: "1.5rem",
+              "2xl": "2.5rem",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .font-display {
+        font-family: "Playfair Display", serif;
+      }
+      .hero-gradient {
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.4), transparent);
+      }
+      /* Mobile Bottom Navigation */
+      .mobile-bottom-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: white;
+        border-top: 1px solid #e5e7eb;
+        z-index: 50;
+        display: none;
+      }
+
+      @media (max-width: 768px) {
+        .mobile-bottom-nav {
+          display: block;
+        }
+        body {
+          padding-bottom: 70px;
+        }
+      }
+
+      .mobile-bottom-nav a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem;
+        color: #6b7280;
+        font-size: 0.75rem;
+        transition: all 0.3s;
+      }
+
+      .mobile-bottom-nav a.active {
+        color: #6B5B4B;
+      }
+
+      .mobile-bottom-nav a .material-icons-outlined {
+        font-size: 1.5rem;
+        margin-bottom: 0.25rem;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 transition-colors duration-300"
+  >
+    <header
+      class="fixed top-0 left-0 right-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-black/5 dark:border-white/5"
+    >
+      <nav
+        class="container mx-auto px-6 py-4 flex items-center justify-between"
+      >
+        <a href="index.html" class="flex items-center gap-2">
+          <span class="material-icons-outlined text-primary text-3xl"
+            >chair</span
+          >
+          <span class="text-2xl font-display font-bold tracking-tight"
+            >Aunara</span
+          >
+        </a>
+
+        <div class="hidden md:flex items-center gap-10">
+          <a
+            class="text-sm font-medium hover:text-primary transition-colors"
+            href="index.html"
+            >Home</a
+          >
+          <a
+            class="text-sm font-medium hover:text-primary transition-colors text-slate-500 dark:text-slate-400"
+            href="collection.html"
+            >Collection</a
+          >
+          <a
+            class="text-sm font-medium hover:text-primary transition-colors text-slate-500 dark:text-slate-400"
+            href="rooms.html"
+            >Rooms</a
+          >
+          <a
+            class="text-sm font-medium hover:text-primary transition-colors text-slate-500 dark:text-slate-400"
+            href="shop.html"
+            >Shop</a
+          >
+          <a
+            class="text-sm font-medium hover:text-primary transition-colors text-slate-500 dark:text-slate-400"
+            href="blog.html"
+            >Blog</a
+          >
+        </div>
+
+        <div class="flex items-center gap-5">
+          <button
+            class="p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-full transition-colors"
+            onclick="toggleSearch()"
+          >
+            <span class="material-icons-outlined">search</span>
+          </button>
+          <a
+            href="cart.html"
+            class="p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-full transition-colors relative"
+          >
+            <span class="material-icons-outlined">shopping_bag</span>
+            <span
+              class="absolute top-1 right-1 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center"
+              >2</span
+            >
+          </a>
+          <button
+            class="p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-full transition-colors"
+            onclick="document.documentElement.classList.toggle('dark')"
+          >
+            <span class="material-icons-outlined dark:hidden">dark_mode</span>
+            <span class="material-icons-outlined hidden dark:block"
+              >light_mode</span
+            >
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="pt-20">
+      <!-- Hero Section -->
+      <section class="px-6 py-4">
+        <div
+          class="relative h-[85vh] rounded-2xl md:rounded-[2.5rem] overflow-hidden group"
+        >
+          <img
+            alt="Modern living room with designer furniture"
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFQhApb4CJ0nqoh2pkALCOHY4ChS0P83FaScHrTtM0JC8lAJJQFsBsv-Bfu6cLF_WIDwWGbyhIgB_ptaFmiD_Re3Jiu_UXnj4NWtuVMK8P2tWCc8nFNJ1MIO_bmiFiDevYgUS-cGVm89EmNdVli3JHH4hIpZo0ya4huSBK-Xuq8auRDZlJY4VdKP1Qv7Kx1y6pHjN2QjiCa4Y_nRh4SOlLtFD4mwsFkjNRaFL00dJkkMfRbpzBRvZHjXB-U4biDXJbf2niLHzgobWB"
+          />
+          <div
+            class="absolute inset-0 hero-gradient flex flex-col justify-center px-10 md:px-24"
+          >
+            <span
+              class="inline-block bg-white/20 backdrop-blur-md text-white text-xs font-semibold tracking-widest uppercase py-1.5 px-4 rounded-full mb-6 self-start"
+            >
+              Discover Furniture
+            </span>
+            <h1
+              class="font-display text-5xl md:text-7xl lg:text-8xl text-white max-w-2xl leading-tight mb-8"
+            >
+              Timeless Design <br />
+              Everyday Comfort.
+            </h1>
+            <p
+              class="text-white/80 text-lg md:text-xl max-w-lg mb-10 leading-relaxed"
+            >
+              Modern elegance meets lasting comfort. Our furniture is crafted to
+              inspire and designed for your contemporary lifestyle.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <a
+                class="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-lg font-medium transition-all transform hover:-translate-y-1"
+                href="shop.html"
+              >
+                Shop Now
+              </a>
+              <button
+                onclick="openWhatsApp()"
+                class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white px-8 py-4 rounded-lg font-medium border border-white/30 transition-all transform hover:-translate-y-1"
+              >
+                Contact Us
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Categories Section -->
+      <section class="py-24 container mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <h2 class="font-display text-4xl mb-4">Explore Our Crafted Pieces</h2>
+          <p class="text-slate-500 dark:text-slate-400">
+            We create pieces that blend design and function. Simple, warm, and
+            beautifully made furniture for every room in your home.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <a
+            href="collection.html?category=chairs"
+            class="group relative overflow-hidden rounded-2xl aspect-[4/5] cursor-pointer"
+          >
+            <img
+              alt="Designer chair"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDjKfExehqs_lTuE4DoGgDLUjc_HnHlni6wo1Ky25sAMW3qNNZqHEpLXNr9nUB2lav-2zCPT-KCdiGzRjeLZgE20Dvu9MgOc6MDxKW1l42oOA5NwB2GLeukcQQxhPAuifdWA8uuj7prvMQpWGhCDw_QEV3HjBQF_TAbJHwXt-Co4b0jEFou-xytRZGE5c_DtSHlb4Oay84LJM6ZbHA7kSOHagKEyXuU-ltWwDXf_nglHpDLHptBe9OCeufmjBSpzPFo49splVdWaTe"
+            />
+            <div
+              class="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors"
+            ></div>
+            <div class="absolute inset-x-0 bottom-0 p-6 flex justify-center">
+              <div
+                class="bg-white/95 dark:bg-surface-dark/95 backdrop-blur shadow-xl py-3 px-8 rounded-xl text-center transition-transform duration-500 group-hover:-translate-y-2"
+              >
+                <h3 class="font-semibold text-lg">Chairs</h3>
+                <p class="text-xs text-slate-500 uppercase tracking-widest">
+                  From $120
+                </p>
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="collection.html?category=storage"
+            class="group relative overflow-hidden rounded-2xl aspect-[4/5] cursor-pointer"
+          >
+            <img
+              alt="Wooden sideboard"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRSZuCEXiHg6-AV130-eh7tBOpA1Fne_6cGY7NpJ9Z1-p2x3z7PcQmI7JKAAy-eNkH_k_imG7g-ULm0Xx46jUyGAcR5z7hqSAZQjAv19oWVsE6S6w1PoZaBNZq0_DhMBNAHyrUEI3M1NvGLZZjgqpwF5aL5qQ35FJbjV4xcTgMdF-rVYzPUeR6qSZKeHnSryc35oFAs6UliNlhjrZfzc8wq573uwZLhybXGrXQ6JTZFc4WWz3QukUUcEd-dpWaz8wMW7sf8EwiaMXm"
+            />
+            <div
+              class="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors"
+            ></div>
+            <div class="absolute inset-x-0 bottom-0 p-6 flex justify-center">
+              <div
+                class="bg-white/95 dark:bg-surface-dark/95 backdrop-blur shadow-xl py-3 px-8 rounded-xl text-center transition-transform duration-500 group-hover:-translate-y-2"
+              >
+                <h3 class="font-semibold text-lg">Storage</h3>
+                <p class="text-xs text-slate-500 uppercase tracking-widest">
+                  From $250
+                </p>
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="collection.html?category=lighting"
+            class="group relative overflow-hidden rounded-2xl aspect-[4/5] cursor-pointer"
+          >
+            <img
+              alt="Minimalist lighting"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmlkaLnhABxz_CWxOgzym1Bq_CyhG89pZ4aTqUY-a_ZknCzjsR7JDTu_A_I9e38O-kQXtdC_1uEpV82mO6YEoWMkajEekOyWz8tw3TxkhtMPSpUelZ1JQgD1PMVHwUYN0aZVNSH68Cgfs9P2wr1glrukyenTo8MjT7pC-gm7j1BSvBpeAz3u-GzH4b6MRJm3asWLEIQbQdMCQ5mWfBOqW4oELE2m8jzZEG-G5sAXxAI0kVGYhM8cQ2OHTk81kd7h5IH95OIc3g0yCI"
+            />
+            <div
+              class="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors"
+            ></div>
+            <div class="absolute inset-x-0 bottom-0 p-6 flex justify-center">
+              <div
+                class="bg-white/95 dark:bg-surface-dark/95 backdrop-blur shadow-xl py-3 px-8 rounded-xl text-center transition-transform duration-500 group-hover:-translate-y-2"
+              >
+                <h3 class="font-semibold text-lg">Lighting</h3>
+                <p class="text-xs text-slate-500 uppercase tracking-widest">
+                  From $85
+                </p>
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="collection.html?category=tables"
+            class="group relative overflow-hidden rounded-2xl aspect-[4/5] cursor-pointer"
+          >
+            <img
+              alt="Wooden coffee table"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTsiwIolZohFpsoVxCwVOCNE9v8tDrk4UqHeUxStxndFUGw7edpksjHZQuebxRl9KubZdZ4-dsW0nL6gOudWqe-jEfh-rrgB2yvJE_9aF5itM9wK6bNeiwGN4mPgDWujuG3o8aUet8PL7H0ksUVyV-9wAHp2_bepq5bOFcsJY6GVXG48--K11tcDdt1J421uWfw5rLe1m5mHsNZ607dOnDKMJoppf7cj3m2xtguhHnFXGw5Qkbvj26NZIHcdEQJ-D2DnmjevrOXh1_"
+            />
+            <div
+              class="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors"
+            ></div>
+            <div class="absolute inset-x-0 bottom-0 p-6 flex justify-center">
+              <div
+                class="bg-white/95 dark:bg-surface-dark/95 backdrop-blur shadow-xl py-3 px-8 rounded-xl text-center transition-transform duration-500 group-hover:-translate-y-2"
+              >
+                <h3 class="font-semibold text-lg">Tables</h3>
+                <p class="text-xs text-slate-500 uppercase tracking-widest">
+                  From $95
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Best Selling Section -->
+      <section class="py-24 bg-[#F2F0ED] dark:bg-[#1A1A1A]">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-16">
+            <span
+              class="text-[10px] font-bold tracking-[0.3em] text-primary uppercase mb-3 block"
+              >Best Selling Collection</span
+            >
+            <h2 class="font-display text-4xl mb-6">
+              Timeless Pieces For Modern Living
+            </h2>
+            <p class="text-slate-500 dark:text-slate-400 max-w-xl mx-auto">
+              Explore our best-selling furniture, crafted with care to bring
+              comfort, beauty, and function into your everyday space.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div
+              class="bg-surface-light dark:bg-surface-dark p-6 rounded-2xl group"
+            >
+              <div
+                class="aspect-square bg-[#F9F9F9] dark:bg-zinc-800 rounded-xl overflow-hidden mb-6 relative"
+              >
+                <img
+                  alt="Cozy Log Sofa"
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLZgwLjOaHgIAVMUOfr6mBtPAJpzxDMwD4TnAsPCvOuv81i_Vu8WOmArnZPmIGWNpKTcqHAyyd2oaplh3Q364lNZC0RQKk7iO4gt8hazTJx3lkSI5W9WDPbBu2CwBFt9RRePsjB0Z6JOswIsY_OBovc0TCQSTLpB9tpmj6HUqhOETb-SQsesHYDTkyF7qf1MHgsohFGLIYkIgSOZDONHWU13YdvvlI4CGqweWAWxXw84YyICOwO3icAj_a3Rck1SMUBynWjDZo-loQ"
+                />
+                <button
+                  onclick="toggleFavorite(this)"
+                  class="absolute top-4 right-4 bg-white/80 dark:bg-black/50 backdrop-blur-sm p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  <span class="material-icons-outlined text-sm"
+                    >favorite_border</span
+                  >
+                </button>
+              </div>
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="font-display text-xl">Cozy Log Sofa</h3>
+                <span class="font-bold text-primary">$1,202</span>
+              </div>
+              <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">
+                A rustic-modern sofa made with solid wood and soft cushions,
+                perfect for relaxing.
+              </p>
+              <button
+                onclick="openWhatsApp('Cozy Log Sofa - $1,202')"
+                class="w-full py-3 border border-slate-200 dark:border-white/10 rounded-lg text-sm font-semibold hover:bg-primary hover:text-white hover:border-primary transition-all"
+              >
+                Order via WhatsApp
+              </button>
+            </div>
+
+            <div
+              class="bg-surface-light dark:bg-surface-dark p-6 rounded-2xl group"
+            >
+              <div
+                class="aspect-square bg-[#F9F9F9] dark:bg-zinc-800 rounded-xl overflow-hidden mb-6 relative"
+              >
+                <img
+                  alt="Sculpted Chair"
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpdHCK97L00H3VD8yd7umq4wa9atYpPKkqpym7bFKaJfmOOZbljjPROtSRKrSoajtAngu3PifoixHkX7FQXtTVfi6N7ejj6nbnQh2eyg8KgD3rnyjRelVCoub26KfIduoWT5BEwSapYKW8WfLigbgBwyUqzJxWO6-4DrbhH9a_z-YtxAEhJo9pEpSin5jgOXkzKz_29efPiWXQUZNamx_AghmlL5ucozdUQQu-yBwc_n2553p-Pa3sG0U5ToAieZ58483SvJ-64ePD"
+                />
+                <button
+                  onclick="toggleFavorite(this)"
+                  class="absolute top-4 right-4 bg-white/80 dark:bg-black/50 backdrop-blur-sm p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  <span class="material-icons-outlined text-sm"
+                    >favorite_border</span
+                  >
+                </button>
+              </div>
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="font-display text-xl">Sculpted Chair</h3>
+                <span class="font-bold text-primary">$450</span>
+              </div>
+              <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">
+                Hand-carved from a single piece of wood, blending natural form
+                with modern function.
+              </p>
+              <a
+                href="product.html"
+                class="block w-full py-3 border border-slate-200 dark:border-white/10 rounded-lg text-sm font-semibold hover:bg-primary hover:text-white hover:border-primary transition-all text-center"
+              >
+                View Details
+              </a>
+            </div>
+
+            <div
+              class="bg-surface-light dark:bg-surface-dark p-6 rounded-2xl group"
+            >
+              <div
+                class="aspect-square bg-[#F9F9F9] dark:bg-zinc-800 rounded-xl overflow-hidden mb-6 relative"
+              >
+                <img
+                  alt="Patch Armchair"
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKH9NpGAHMTPVLpuvhYUuv_0Lxzq3M8-spAih7i3TUDpf61DT71V2YKsD8GZU9chrKtREJvjvAf6t_srgKAgF_byRYkWzsPzPLmU4T9pHlYj4c2NhdYWIeHrpOkmY66npq7xY33Bvyfbb_djEDZFeBIj_DgnmtOBnbMA5y4V9YjkiPrWyXVqxVAJbW3XQ9dQQhZOIS437CBur2E3Gd1pg2rHDfcCt2D21sHWUNXAxaIEJdCgvp7B1Zw-Os7hVYqQztZGsk05gaaRM_"
+                />
+                <button
+                  onclick="toggleFavorite(this)"
+                  class="absolute top-4 right-4 bg-white/80 dark:bg-black/50 backdrop-blur-sm p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  <span class="material-icons-outlined text-sm"
+                    >favorite_border</span
+                  >
+                </button>
+              </div>
+              <div class="flex justify-between items-start mb-2">
+                <h3 class="font-display text-xl">Patch Armchair</h3>
+                <span class="font-bold text-primary">$890</span>
+              </div>
+              <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">
+                A uniquely upholstered armchair with a charming,
+                vintage-inspired design.
+              </p>
+              <button
+                onclick="openWhatsApp('Patch Armchair - $890')"
+                class="w-full py-3 border border-slate-200 dark:border-white/10 rounded-lg text-sm font-semibold hover:bg-primary hover:text-white hover:border-primary transition-all"
+              >
+                Order via WhatsApp
+              </button>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <a
+              class="inline-flex items-center gap-2 font-semibold text-sm hover:gap-4 transition-all"
+              href="collection.html"
+            >
+              View Full Collection
+              <span class="material-icons-outlined text-sm">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="py-24 px-6">
+        <div class="container mx-auto">
+          <div
+            class="relative rounded-[2.5rem] overflow-hidden py-32 px-10 text-center"
+          >
+            <img
+              alt="Elegant comfort"
+              class="absolute inset-0 w-full h-full object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJgO3CwTbXyJWMIkciLT7w23XhFu3RTYPOtXPyrx6hyYgcs0QWKxHP_9NaMJTTaeYEkVqmR3O9e8lhWQKzx6t88Vw5DmQZTwEwzrrMssj9qntuka1RDLBdgdtSNkw7vxUTuV5AnlGICjGyma3-k8l0_ZZb5NXc0r63_H-3aJVBJXc5QmoVr-8z-5qJX18Ks_PDLwTGmuiXCjr6Yn6DVVzi1YWf1apQDvQp_Y4_LretbMEn7buRdBflKHsKit72EFfHNX8_80o2Jx84"
+            />
+            <div class="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
+            <div class="relative z-10 max-w-2xl mx-auto">
+              <h2 class="font-display text-5xl md:text-6xl text-white mb-8">
+                Discover Elegant Comfort
+              </h2>
+              <p class="text-white/80 text-lg mb-10 leading-relaxed">
+                Embrace the warmth of minimalist design with furniture that
+                balances comfort, craftsmanship, and timeless beauty — made to
+                elevate your everyday living space.
+              </p>
+              <div class="flex flex-wrap justify-center gap-4">
+                <a
+                  class="bg-primary text-white px-10 py-4 rounded-lg font-bold hover:bg-primary/90 transition-all transform hover:scale-105"
+                  href="shop.html"
+                  >Shop Now</a
+                >
+                <button
+                  onclick="openWhatsApp()"
+                  class="bg-white text-slate-900 px-10 py-4 rounded-lg font-bold hover:bg-white/90 transition-all transform hover:scale-105"
+                >
+                  Contact Us
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-[#0F141E] text-white py-20">
+      <div class="container mx-auto px-6">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20"
+        >
+          <div>
+            <div class="flex items-center gap-2 mb-8">
+              <span class="material-icons-outlined text-primary text-3xl"
+                >chair</span
+              >
+              <span class="text-2xl font-display font-bold">Aunara</span>
+            </div>
+            <p class="text-slate-400 text-sm leading-relaxed mb-8 max-w-xs">
+              Furniture that feels like home, designed to blend seamlessly into
+              your life and space with effortless charm.
+            </p>
+            <div class="flex gap-4">
+              <a
+                class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors"
+                href="#"
+                onclick="
+                  openWhatsApp();
+                  return false;
+                "
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 1.166.054 1.791.248 2.214.412.56.217.96.477 1.38.897.42.42.68.82.897 1.38.164.423.358 1.048.412 2.214.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.166-.248 1.791-.412 2.214-.217.56-.477.96-.897 1.38-.42.42-.82.68-1.38.897-.423.164-1.048.358-2.214.412-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.166-.054-1.791-.248-2.214-.412-.56-.217-.96-.477-1.38-.897-.42-.42-.68-.82-.897-1.38-.164-.423-.358-1.048-.412-2.214-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.054-1.166.248-1.791.412-2.214.217-.56.477-.96.897-1.38.42-.42.82-.68 1.38-.897.423-.164 1.048-.358 2.214-.412 1.266-.058 1.646-.07 4.85-.07zM12 0C8.741 0 8.333.014 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.132 5.775.072 7.053.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.765.297 1.636.498 2.913.558C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c1.277-.06 2.148-.261 2.913-.558.788-.306 1.459-.717 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.297-.765.498-1.636.558-2.913.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.06-1.277-.261-2.148-.558-2.913-.306-.788-.717-1.459-1.384-2.126C21.335.935 20.665.522 19.875.217c-.765-.297-1.636-.498-2.913-.558C15.667.012 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors"
+                href="#"
+                onclick="
+                  openWhatsApp();
+                  return false;
+                "
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary transition-colors"
+                href="#"
+                onclick="
+                  openWhatsApp();
+                  return false;
+                "
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.84 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-lg mb-8">Company</h4>
+            <ul class="space-y-4">
+              <li>
+                <a
+                  class="text-slate-400 hover:text-white transition-colors text-sm"
+                  href="#"
+                  onclick="
+                    openWhatsApp('About Aunara');
+                    return false;
+                  "
+                  >About Aunara</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-slate-400 hover:text-white transition-colors text-sm"
+                  href="#"
+                  onclick="
+                    openWhatsApp('Sustainability');
+                    return false;
+                  "
+                  >Sustainability</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-slate-400 hover:text-white transition-colors text-sm"
+                  href="#"
+                  onclick="
+                    openWhatsApp('Press');
+                    return false;
+                  "
+                  >Press</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-slate-400 hover:text-white transition-colors text-sm"
+                  href="#"
+                  onclick="
+                    openWhatsApp('Careers');
+                    return false;
+                  "
+                  >Careers</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-lg mb-8">Shop</h4>
+            <ul class="space-y-4">
+              <li>
+                <a
+                  class="text-slate-400 hover:text-white transition-colors text-sm"
+                  href="rooms.html?room=living"
+                  >Living Room</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-slate-400 hover:text-white transition-colors text-sm"
+                  href="rooms.html?room=bedroom"
+                  >Bedroom</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-slate-400 hover:text-white transition-colors text-sm"
+                  href="rooms.html?room=office"
+                  >Office</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-slate-400 hover:text-white transition-colors text-sm"
+                  href="shop.html"
+                  >Decor</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-lg mb-8">Help</h4>
+            <ul class="space-y-4">
+              <li>
+                <a
+                  class="text-slate-400 hover:text-white transition-colors text-sm"
+                  href="#"
+                  onclick="
+                    openWhatsApp('FAQ');
+                    return false;
+                  "
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-slate-400 hover:text-white transition-colors text-sm"
+                  href="#"
+                  onclick="
+                    openWhatsApp('Shipping & Returns');
+                    return false;
+                  "
+                  >Shipping & Returns</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-slate-400 hover:text-white transition-colors text-sm"
+                  href="#"
+                  onclick="
+                    openWhatsApp('Contact Support');
+                    return false;
+                  "
+                  >Contact Support</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-slate-400 hover:text-white transition-colors text-sm"
+                  href="#"
+                  onclick="
+                    openWhatsApp('Track Order');
+                    return false;
+                  "
+                  >Track Order</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6"
+        >
+          <p class="text-slate-500 text-xs">
+            Copyright @2025 Aunara. All rights reserved.
+          </p>
+          <div class="flex gap-8">
+            <a
+              class="text-slate-500 hover:text-white transition-colors text-xs"
+              href="#"
+              onclick="
+                openWhatsApp('Terms & Conditions');
+                return false;
+              "
+              >Terms & Conditions</a
+            >
+            <a
+              class="text-slate-500 hover:text-white transition-colors text-xs"
+              href="#"
+              onclick="
+                openWhatsApp('Privacy Policy');
+                return false;
+              "
+              >Privacy Policy</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav">
+      <div class="grid grid-cols-5 h-full">
+        <a href="index.html" class="active">
+          <span class="material-icons-outlined">home</span>
+          <span>Home</span>
+        </a>
+        <a href="collection.html">
+          <span class="material-icons-outlined">grid_view</span>
+          <span>Collection</span>
+        </a>
+        <a href="shop.html">
+          <span class="material-icons-outlined">shopping_bag</span>
+          <span>Shop</span>
+        </a>
+        <a href="blog.html">
+          <span class="material-icons-outlined">article</span>
+          <span>Blog</span>
+        </a>
+        <a href="#" onclick="openWhatsApp('Contact from Home'); return false;">
+          <span class="material-icons-outlined">chat</span>
+          <span>Contact</span>
+        </a>
+      </div>
+    </nav>
+
+    <script src="script.js"></script>
+  </body>
+</html>

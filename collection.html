@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Our Collection | Aunara Furniture</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#6B5B4B",
+                        "background-light": "#F9F8F6",
+                        "background-dark": "#121212",
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#1E1E1E",
+                    },
+                    fontFamily: {
+                        display: ["Playfair Display", "serif"],
+                        sans: ["Inter", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 transition-colors duration-300">
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-black/5 dark:border-white/5">
+    <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2">
+            <span class="material-icons-outlined text-primary text-3xl">chair</span>
+            <span class="text-2xl font-display font-bold tracking-tight">Aunara</span>
+        </a>
+        
+        <div class="hidden md:flex items-center gap-10">
+            <a class="text-sm font-medium hover:text-primary transition-colors text-slate-500" href="index.html">Home</a>
+            <a class="text-sm font-medium hover:text-primary transition-colors" href="collection.html">Collection</a>
+            <a class="text-sm font-medium hover:text-primary transition-colors text-slate-500 dark:text-slate-400" href="rooms.html">Rooms</a>
+            <a class="text-sm font-medium hover:text-primary transition-colors text-slate-500 dark:text-slate-400" href="shop.html">Shop</a>
+            <a class="text-sm font-medium hover:text-primary transition-colors text-slate-500 dark:text-slate-400" href="blog.html">Blog</a>
+        </div>
+        
+        <div class="flex items-center gap-5">
+            <button class="p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-full transition-colors" onclick="toggleSearch()">
+                <span class="material-icons-outlined">search</span>
+            </button>
+            <a href="cart.html" class="p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-full transition-colors relative">
+                <span class="material-icons-outlined">shopping_bag</span>
+                <span class="absolute top-1 right-1 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">2</span>
+            </a>
+            <button class="p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-full transition-colors" onclick="document.documentElement.classList.toggle('dark')">
+                <span class="material-icons-outlined dark:hidden">dark_mode</span>
+                <span class="material-icons-outlined hidden dark:block">light_mode</span>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<main class="pt-32 pb-24">
+    <div class="container mx-auto px-6">
+        <!-- Page Header -->
+        <div class="text-center mb-16">
+            <span class="text-[10px] font-bold tracking-[0.3em] text-primary uppercase mb-3 block">Explore Our Range</span>
+            <h1 class="font-display text-5xl md:text-6xl mb-6">Furniture Collection</h1>
+            <p class="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">Discover our curated selection of timeless furniture pieces, each designed to bring elegance and comfort to your space.</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap justify-center gap-4 mb-16">
+            <button onclick="filterProducts('all')" class="filter-btn active px-6 py-3 rounded-full border border-primary bg-primary text-white font-medium transition-all">
+                All Products
+            </button>
+            <button onclick="filterProducts('chairs')" class="filter-btn px-6 py-3 rounded-full border border-slate-200 dark:border-white/10 hover:border-primary hover:text-primary font-medium transition-all">
+                Chairs
+            </button>
+            <button onclick="filterProducts('tables')" class="filter-btn px-6 py-3 rounded-full border border-slate-200 dark:border-white/10 hover:border-primary hover:text-primary font-medium transition-all">
+                Tables
+            </button>
+            <button onclick="filterProducts('storage')" class="filter-btn px-6 py-3 rounded-full border border-slate-200 dark:border-white/10 hover:border-primary hover:text-primary font-medium transition-all">
+                Storage
+            </button>
+            <button onclick="filterProducts('lighting')" class="filter-btn px-6 py-3 rounded-full border border-slate-200 dark:border-white/10 hover:border-primary hover:text-primary font-medium transition-all">
+                Lighting
+            </button>
+        </div>
+
+        <!-- Products Grid -->
+        <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Product 1 -->
+            <div class="product-item bg-surface-light dark:bg-surface-dark p-6 rounded-2xl group" data-category="chairs">
+                <div class="aspect-square bg-[#F9F9F9] dark:bg-zinc-800 rounded-xl overflow-hidden mb-6 relative">
+                    <img alt="Sculpted Chair" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpdHCK97L00H3VD8yd7umq4wa9atYpPKkqpym7bFKaJfmOOZbljjPROtSRKrSoajtAngu3PifoixHkX7FQXtTVfi6N7ejj6nbnQh2eyg8KgD3rnyjRelVCoub26KfIduoWT5BEwSapYKW8WfLigbgBwyUqzJxWO6-4DrbhH9a_z-YtxAEhJo9pEpSin5jgOXkzKz_29efPiWXQUZNamx_AghmlL5ucozdUQQu-yBwc_n2553p-Pa3sG0U5ToAieZ58483SvJ-64ePD"/>
+                    <button onclick="toggleFavorite(this)" class="absolute top-4 right-4 bg-white/80 dark:bg-black/50 backdrop-blur-sm p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span class="material-icons-outlined text-sm">favorite_border</span>
+                    </button>
+                </div>
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="font-display text-xl">Sculpted Lounge Chair</h3>
+                    <span class="font-bold text-primary">$450</span>
+                </div>
+                <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Hand-carved from a single piece of wood, blending natural form with modern function.</p>
+                <div class="flex gap-2">
+                    <a href="product.html" class="flex-1 py-3 border border-slate-200 dark:border-white/10 rounded-lg text-sm font-semibold hover:bg-primary hover:text-white hover:border-primary transition-all text-center">
+                        View Details
+                    </a>
+                    <button onclick="openWhatsApp('Sculpted Lounge Chair - $450')" class="px-4 py-3 bg-[#25D366] text-white rounded-lg hover:bg-[#20BA5A] transition-colors">
+                        <span class="material-icons-outlined text-sm">chat</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-item bg-surface-light dark:bg-surface-dark p-6 rounded-2xl group" data-category="chairs">
+                <div class="aspect-square bg-[#F9F9F9] dark:bg-zinc-800 rounded-xl overflow-hidden mb-6 relative">
+                    <img alt="Patch Armchair" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKH9NpGAHMTPVLpuvhYUuv_0Lxzq3M8-spAih7i3TUDpf61DT71V2YKsD8GZU9chrKtREJvjvAf6t_srgKAgF_byRYkWzsPzPLmU4T9pHlYj4c2NhdYWIeHrpOkmY66npq7xY33Bvyfbb_djEDZFeBIj_DgnmtOBnbMA5y4V9YjkiPrWyXVqxVAJbW3XQ9dQQhZOIS437CBur2E3Gd1pg2rHDfcCt2D21sHWUNXAxaIEJdCgvp7B1Zw-Os7hVYqQztZGsk05gaaRM_"/>
+                    <button onclick="toggleFavorite(this)" class="absolute top-4 right-4 bg-white/80 dark:bg-black/50 backdrop-blur-sm p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span class="material-icons-outlined text-sm">favorite_border</span>
+                    </button>
+                </div>
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="font-display text-xl">Patch Armchair</h3>
+                    <span class="font-bold text-primary">$890</span>
+                </div>
+                <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">A uniquely upholstered armchair with a charming, vintage-inspired design.</p>
+                <div class="flex gap-2">
+                    <button onclick="openWhatsApp('Patch Armchair - $890')" class="flex-1 py-3 border border-slate-200 dark:border-white/10 rounded-lg text-sm font-semibold hover:bg-primary hover:text-white hover:border-primary transition-all">
+                        Order via WhatsApp
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-item bg-surface-light dark:bg-surface-dark p-6 rounded-2xl group" data-category="tables">
+                <div class="aspect-square bg-[#F9F9F9] dark:bg-zinc-800 rounded-xl overflow-hidden mb-6 relative">
+                    <img alt="Grace Coffee Table" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVyKUuQ5NoJJgw4DKrQthqPl60VnjLhLOiXTbe6IWk4G6FpkX2Y15X6Aqp8luZjQB-HP7mmO3UzeTg-KU7ye_2vFOw6FyWj4j2UX_3a6PyOSrLSqRSIbbS6OCJOoRfLOwljiemJYs5JyJkhwNgbfEUJsuymtxqEk30x1taBLlY4iWT1lsB_pN39E8ezc1Q5kBmuzX1vsYHF10d4xuf_dxTicGEAgVIyAjA9F24NmcKzUKXjI6IiYV8LH-QPUP3Cx0iIz5rO4RRYg3N"/>
+                    <button onclick="toggleFavorite(this)" class="absolute top-4 right-4 bg-white/80 dark:bg-black/50 backdrop-blur-sm p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span class="material-icons-outlined text-sm">favorite_border</span>
+                    </button>
+                </div>
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="font-display text-xl">Grace Coffee Table</h3>
+                    <span class="font-bold text-primary">$143</span>
+                </div>
+                <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Minimalist circular coffee table with a warm timber finish.</p>
+                <div class="flex gap-2">
+                    <button onclick="openWhatsApp('Grace Coffee Table - $143')" class="flex-1 py-3 border border-slate-200 dark:border-white/10 rounded-lg text-sm font-semibold hover:bg-primary hover:text-white hover:border-primary transition-all">
+                        Order via WhatsApp
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-item bg-surface-light dark:bg-surface-dark p-6 rounded-2xl group" data-category="storage">
+                <div class="aspect-square bg-[#F9F9F9] dark:bg-zinc-800 rounded-xl overflow-hidden mb-6 relative">
+                    <img alt="Nordic Sideboard" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRSZuCEXiHg6-AV130-eh7tBOpA1Fne_6cGY7NpJ9Z1-p2x3z7PcQmI7JKAAy-eNkH_k_imG7g-ULm0Xx46jUyGAcR5z7hqSAZQjAv19oWVsE6S6w1PoZaBNZq0_DhMBNAHyrUEI3M1NvGLZZjgqpwF5aL5qQ35FJbjV4xcTgMdF-rVYzPUeR6qSZKeHnSryc35oFAs6UliNlhjrZfzc8wq573uwZLhybXGrXQ6JTZFc4WWz3QukUUcEd-dpWaz8wMW7sf8EwiaMXm"/>
+                    <button onclick="toggleFavorite(this)" class="absolute top-4 right-4 bg-white/80 dark:bg-black/50 backdrop-blur-sm p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span class="material-icons-outlined text-sm">favorite_border</span>
+                    </button>
+                </div>
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="font-display text-xl">Nordic Sideboard</h3>
+                    <span class="font-bold text-primary">$850</span>
+                </div>
+                <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Clean-lined oak sideboard with seamless handle-free doors.</p>
+                <div class="flex gap-2">
+                    <button onclick="openWhatsApp('Nordic Sideboard - $850')" class="flex-1 py-3 border border-slate-200 dark:border-white/10 rounded-lg text-sm font-semibold hover:bg-primary hover:text-white hover:border-primary transition-all">
+                        Order via WhatsApp
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-item bg-surface-light dark:bg-surface-dark p-6 rounded-2xl group" data-category="lighting">
+                <div class="aspect-square bg-[#F9F9F9] dark:bg-zinc-800 rounded-xl overflow-hidden mb-6 relative">
+                    <img alt="Orbital Lamp" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmlkaLnhABxz_CWxOgzym1Bq_CyhG89pZ4aTqUY-a_ZknCzjsR7JDTu_A_I9e38O-kQXtdC_1uEpV82mO6YEoWMkajEekOyWz8tw3TxkhtMPSpUelZ1JQgD1PMVHwUYN0aZVNSH68Cgfs9P2wr1glrukyenTo8MjT7pC-gm7j1BSvBpeAz3u-GzH4b6MRJm3asWLEIQbQdMCQ5mWfBOqW4oELE2m8jzZEG-G5sAXxAI0kVGYhM8cQ2OHTk81kd7h5IH95OIc3g0yCI"/>
+                    <button onclick="toggleFavorite(this)" class="absolute top-4 right-4 bg-white/80 dark:bg-black/50 backdrop-blur-sm p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span class="material-icons-outlined text-sm">favorite_border</span>
+                    </button>
+                </div>
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="font-display text-xl">Orbital Floor Lamp</h3>
+                    <span class="font-bold text-primary">$210</span>
+                </div>
+                <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Atmospheric lighting designed to elevate the mood of your living space.</p>
+                <div class="flex gap-2">
+                    <button onclick="openWhatsApp('Orbital Floor Lamp - $210')" class="flex-1 py-3 border border-slate-200 dark:border-white/10 rounded-lg text-sm font-semibold hover:bg-primary hover:text-white hover:border-primary transition-all">
+                        Order via WhatsApp
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-item bg-surface-light dark:bg-surface-dark p-6 rounded-2xl group" data-category="chairs">
+                <div class="aspect-square bg-[#F9F9F9] dark:bg-zinc-800 rounded-xl overflow-hidden mb-6 relative">
+                    <img alt="Cozy Log Sofa" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLZgwLjOaHgIAVMUOfr6mBtPAJpzxDMwD4TnAsPCvOuv81i_Vu8WOmArnZPmIGWNpKTcqHAyyd2oaplh3Q364lNZC0RQKk7iO4gt8hazTJx3lkSI5W9WDPbBu2CwBFt9RRePsjB0Z6JOswIsY_OBovc0TCQSTLpB9tpmj6HUqhOETb-SQsesHYDTkyF7qf1MHgsohFGLIYkIgSOZDONHWU13YdvvlI4CGqweWAWxXw84YyICOwO3icAj_a3Rck1SMUBynWjDZo-loQ"/>
+                    <button onclick="toggleFavorite(this)" class="absolute top-4 right-4 bg-white/80 dark:bg-black/50 backdrop-blur-sm p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span class="material-icons-outlined text-sm">favorite_border</span>
+                    </button>
+                </div>
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="font-display text-xl">Cozy Log Sofa</h3>
+                    <span class="font-bold text-primary">$1,202</span>
+                </div>
+                <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">A rustic-modern sofa made with solid wood and soft cushions, perfect for relaxing.</p>
+                <div class="flex gap-2">
+                    <button onclick="openWhatsApp('Cozy Log Sofa - $1,202')" class="flex-1 py-3 border border-slate-200 dark:border-white/10 rounded-lg text-sm font-semibold hover:bg-primary hover:text-white hover:border-primary transition-all">
+                        Order via WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="bg-[#0F141E] text-white py-20">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+            <div>
+                <div class="flex items-center gap-2 mb-8">
+                    <span class="material-icons-outlined text-primary text-3xl">chair</span>
+                    <span class="text-2xl font-display font-bold">Aunara</span>
+                </div>
+                <p class="text-slate-400 text-sm leading-relaxed mb-8 max-w-xs">
+                    Furniture that feels like home, designed to blend seamlessly into your life and space with effortless charm.
+                </p>
+            </div>
+            
+            <div>
+                <h4 class="font-bold text-lg mb-8">Company</h4>
+                <ul class="space-y-4">
+                    <li><a class="text-slate-400 hover:text-white transition-colors text-sm" href="#" onclick="openWhatsApp('About Aunara'); return false;">About Aunara</a></li>
+                    <li><a class="text-slate-400 hover:text-white transition-colors text-sm" href="#" onclick="openWhatsApp('Sustainability'); return false;">Sustainability</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-bold text-lg mb-8">Shop</h4>
+                <ul class="space-y-4">
+                    <li><a class="text-slate-400 hover:text-white transition-colors text-sm" href="rooms.html?room=living">Living Room</a></li>
+                    <li><a class="text-slate-400 hover:text-white transition-colors text-sm" href="rooms.html?room=bedroom">Bedroom</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 class="font-bold text-lg mb-8">Help</h4>
+                <ul class="space-y-4">
+                    <li><a class="text-slate-400 hover:text-white transition-colors text-sm" href="#" onclick="openWhatsApp('FAQ'); return false;">FAQ</a></li>
+                    <li><a class="text-slate-400 hover:text-white transition-colors text-sm" href="#" onclick="openWhatsApp('Contact Support'); return false;">Contact Support</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-slate-500 text-xs">Copyright @2025 Aunara. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+function filterProducts(category) {
+    const products = document.querySelectorAll('.product-item');
+    const buttons = document.querySelectorAll('.filter-btn');
+    
+    // Update button states
+    buttons.forEach(btn => {
+        btn.classList.remove('active', 'bg-primary', 'text-white');
+        btn.classList.add('border-slate-200', 'dark:border-white/10');
+    });
+    event.target.classList.add('active', 'bg-primary', 'text-white', 'border-primary');
+    event.target.classList.remove('border-slate-200', 'dark:border-white/10');
+    
+    // Filter products
+    products.forEach(product => {
+        if (category === 'all' || product.dataset.category === category) {
+            product.style.display = 'block';
+        } else {
+            product.style.display = 'none';
+        }
+    });
+}
+</script>
+</body>
+</html>

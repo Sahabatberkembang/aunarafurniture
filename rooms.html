@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Shop by Room | Aunara Furniture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#6B5B4B",
+                        "background-light": "#F9F8F6",
+                        "background-dark": "#121212",
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#1E1E1E",
+                    },
+                    fontFamily: {
+                        display: ["Playfair Display", "serif"],
+                        sans: ["Inter", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100">
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-black/5 dark:border-white/5">
+    <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2">
+            <span class="material-icons-outlined text-primary text-3xl">chair</span>
+            <span class="text-2xl font-display font-bold tracking-tight">Aunara</span>
+        </a>
+        
+        <div class="hidden md:flex items-center gap-10">
+            <a class="text-sm font-medium hover:text-primary transition-colors text-slate-500" href="index.html">Home</a>
+            <a class="text-sm font-medium hover:text-primary transition-colors text-slate-500" href="collection.html">Collection</a>
+            <a class="text-sm font-medium hover:text-primary transition-colors" href="rooms.html">Rooms</a>
+            <a class="text-sm font-medium hover:text-primary transition-colors text-slate-500" href="shop.html">Shop</a>
+            <a class="text-sm font-medium hover:text-primary transition-colors text-slate-500" href="blog.html">Blog</a>
+        </div>
+        
+        <div class="flex items-center gap-5">
+            <a href="cart.html" class="p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-full transition-colors relative">
+                <span class="material-icons-outlined">shopping_bag</span>
+                <span class="absolute top-1 right-1 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">2</span>
+            </a>
+            <button class="p-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-full transition-colors" onclick="document.documentElement.classList.toggle('dark')">
+                <span class="material-icons-outlined dark:hidden">dark_mode</span>
+                <span class="material-icons-outlined hidden dark:block">light_mode</span>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<main class="pt-32 pb-24">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <span class="text-[10px] font-bold tracking-[0.3em] text-primary uppercase mb-3 block">Explore by Space</span>
+            <h1 class="font-display text-5xl md:text-6xl mb-6">Shop by Room</h1>
+            <p class="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">Find the perfect furniture for every room in your home. From living rooms to bedrooms, we have everything you need.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Living Room -->
+            <div class="group relative overflow-hidden rounded-2xl aspect-[4/5] cursor-pointer" onclick="openWhatsApp('Living Room Furniture')">
+                <img alt="Living Room" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFQhApb4CJ0nqoh2pkALCOHY4ChS0P83FaScHrTtM0JC8lAJJQFsBsv-Bfu6cLF_WIDwWGbyhIgB_ptaFmiD_Re3Jiu_UXnj4NWtuVMK8P2tWCc8nFNJ1MIO_bmiFiDevYgUS-cGVm89EmNdVli3JHH4hIpZo0ya4huSBK-Xuq8auRDZlJY4VdKP1Qv7Kx1y6pHjN2QjiCa4Y_nRh4SOlLtFD4mwsFkjNRaFL00dJkkMfRbpzBRvZHjXB-U4biDXJbf2niLHzgobWB"/>
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+                <div class="absolute inset-x-0 bottom-0 p-8">
+                    <div class="bg-white/95 dark:bg-surface-dark/95 backdrop-blur shadow-xl py-4 px-6 rounded-xl transition-transform duration-500 group-hover:-translate-y-2">
+                        <h3 class="font-display text-2xl mb-2">Living Room</h3>
+                        <p class="text-sm text-slate-500 mb-4">Sofas, Coffee Tables, Shelving</p>
+                        <button class="text-primary font-semibold text-sm flex items-center gap-2">
+                            Explore <span class="material-icons-outlined text-sm">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bedroom -->
+            <div class="group relative overflow-hidden rounded-2xl aspect-[4/5] cursor-pointer" onclick="openWhatsApp('Bedroom Furniture')">
+                <img alt="Bedroom" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJgO3CwTbXyJWMIkciLT7w23XhFu3RTYPOtXPyrx6hyYgcs0QWKxHP_9NaMJTTaeYEkVqmR3O9e8lhWQKzx6t88Vw5DmQZTwEwzrrMssj9qntuka1RDLBdgdtSNkw7vxUTuV5AnlGICjGyma3-k8l0_ZZb5NXc0r63_H-3aJVBJXc5QmoVr-8z-5qJX18Ks_PDLwTGmuiXCjr6Yn6DVVzi1YWf1apQDvQp_Y4_LretbMEn7buRdBflKHsKit72EFfHNX8_80o2Jx84"/>
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+                <div class="absolute inset-x-0 bottom-0 p-8">
+                    <div class="bg-white/95 dark:bg-surface-dark/95 backdrop-blur shadow-xl py-4 px-6 rounded-xl transition-transform duration-500 group-hover:-translate-y-2">
+                        <h3 class="font-display text-2xl mb-2">Bedroom</h3>
+                        <p class="text-sm text-slate-500 mb-4">Beds, Nightstands, Wardrobes</p>
+                        <button class="text-primary font-semibold text-sm flex items-center gap-2">
+                            Explore <span class="material-icons-outlined text-sm">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dining Room -->
+            <div class="group relative overflow-hidden rounded-2xl aspect-[4/5] cursor-pointer" onclick="openWhatsApp('Dining Room Furniture')">
+                <img alt="Dining Room" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTsiwIolZohFpsoVxCwVOCNE9v8tDrk4UqHeUxStxndFUGw7edpksjHZQuebxRl9KubZdZ4-dsW0nL6gOudWqe-jEfh-rrgB2yvJE_9aF5itM9wK6bNeiwGN4mPgDWujuG3o8aUet8PL7H0ksUVyV-9wAHp2_bepq5bOFcsJY6GVXG48--K11tcDdt1J421uWfw5rLe1m5mHsNZ607dOnDKMJoppf7cj3m2xtguhHnFXGw5Qkbvj26NZIHcdEQJ-D2DnmjevrOXh1_"/>
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+                <div class="absolute inset-x-0 bottom-0 p-8">
+                    <div class="bg-white/95 dark:bg-surface-dark/95 backdrop-blur shadow-xl py-4 px-6 rounded-xl transition-transform duration-500 group-hover:-translate-y-2">
+                        <h3 class="font-display text-2xl mb-2">Dining Room</h3>
+                        <p class="text-sm text-slate-500 mb-4">Dining Tables, Chairs, Buffets</p>
+                        <button class="text-primary font-semibold text-sm flex items-center gap-2">
+                            Explore <span class="material-icons-outlined text-sm">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Office -->
+            <div class="group relative overflow-hidden rounded-2xl aspect-[4/5] cursor-pointer" onclick="openWhatsApp('Office Furniture')">
+                <img alt="Office" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRSZuCEXiHg6-AV130-eh7tBOpA1Fne_6cGY7NpJ9Z1-p2x3z7PcQmI7JKAAy-eNkH_k_imG7g-ULm0Xx46jUyGAcR5z7hqSAZQjAv19oWVsE6S6w1PoZaBNZq0_DhMBNAHyrUEI3M1NvGLZZjgqpwF5aL5qQ35FJbjV4xcTgMdF-rVYzPUeR6qSZKeHnSryc35oFAs6UliNlhjrZfzc8wq573uwZLhybXGrXQ6JTZFc4WWz3QukUUcEd-dpWaz8wMW7sf8EwiaMXm"/>
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+                <div class="absolute inset-x-0 bottom-0 p-8">
+                    <div class="bg-white/95 dark:bg-surface-dark/95 backdrop-blur shadow-xl py-4 px-6 rounded-xl transition-transform duration-500 group-hover:-translate-y-2">
+                        <h3 class="font-display text-2xl mb-2">Home Office</h3>
+                        <p class="text-sm text-slate-500 mb-4">Desks, Chairs, Storage</p>
+                        <button class="text-primary font-semibold text-sm flex items-center gap-2">
+                            Explore <span class="material-icons-outlined text-sm">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Outdoor -->
+            <div class="group relative overflow-hidden rounded-2xl aspect-[4/5] cursor-pointer" onclick="openWhatsApp('Outdoor Furniture')">
+                <img alt="Outdoor" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmlkaLnhABxz_CWxOgzym1Bq_CyhG89pZ4aTqUY-a_ZknCzjsR7JDTu_A_I9e38O-kQXtdC_1uEpV82mO6YEoWMkajEekOyWz8tw3TxkhtMPSpUelZ1JQgD1PMVHwUYN0aZVNSH68Cgfs9P2wr1glrukyenTo8MjT7pC-gm7j1BSvBpeAz3u-GzH4b6MRJm3asWLEIQbQdMCQ5mWfBOqW4oELE2m8jzZEG-G5sAXxAI0kVGYhM8cQ2OHTk81kd7h5IH95OIc3g0yCI"/>
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+                <div class="absolute inset-x-0 bottom-0 p-8">
+                    <div class="bg-white/95 dark:bg-surface-dark/95 backdrop-blur shadow-xl py-4 px-6 rounded-xl transition-transform duration-500 group-hover:-translate-y-2">
+                        <h3 class="font-display text-2xl mb-2">Outdoor</h3>
+                        <p class="text-sm text-slate-500 mb-4">Patio Sets, Loungers, Decor</p>
+                        <button class="text-primary font-semibold text-sm flex items-center gap-2">
+                            Explore <span class="material-icons-outlined text-sm">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kids Room -->
+            <div class="group relative overflow-hidden rounded-2xl aspect-[4/5] cursor-pointer" onclick="openWhatsApp('Kids Room Furniture')">
+                <img alt="Kids Room" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDjKfExehqs_lTuE4DoGgDLUjc_HnHlni6wo1Ky25sAMW3qNNZqHEpLXNr9nUB2lav-2zCPT-KCdiGzRjeLZgE20Dvu9MgOc6MDxKW1l42oOA5NwB2GLeukcQQxhPAuifdWA8uuj7prvMQpWGhCDw_QEV3HjBQF_TAbJHwXt-Co4b0jEFou-xytRZGE5c_DtSHlb4Oay84LJM6ZbHA7kSOHagKEyXuU-ltWwDXf_nglHpDLHptBe9OCeufmjBSpzPFo49splVdWaTe"/>
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors"></div>
+                <div class="absolute inset-x-0 bottom-0 p-8">
+                    <div class="bg-white/95 dark:bg-surface-dark/95 backdrop-blur shadow-xl py-4 px-6 rounded-xl transition-transform duration-500 group-hover:-translate-y-2">
+                        <h3 class="font-display text-2xl mb-2">Kids Room</h3>
+                        <p class="text-sm text-slate-500 mb-4">Beds, Desks, Storage</p>
+                        <button class="text-primary font-semibold text-sm flex items-center gap-2">
+                            Explore <span class="material-icons-outlined text-sm">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="mt-24 text-center bg-primary/5 rounded-2xl p-12">
+            <h2 class="font-display text-3xl mb-4">Need Help Choosing?</h2>
+            <p class="text-slate-500 dark:text-slate-400 mb-8 max-w-2xl mx-auto">Our furniture experts are here to help you find the perfect pieces for your space. Contact us via WhatsApp for personalized recommendations.</p>
+            <button onclick="openWhatsApp('I need help choosing furniture')" class="bg-primary text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary/90 transition-all inline-flex items-center gap-2">
+                <span>Chat with Expert</span>
+                <span class="material-icons-outlined">chat</span>
+            </button>
+        </div>
+    </div>
+</main>
+
+<footer class="bg-[#0F141E] text-white py-20 mt-24">
+    <div class="container mx-auto px-6">
+        <div class="text-center">
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <span class="material-icons-outlined text-primary text-3xl">chair</span>
+                <span class="text-2xl font-display font-bold">Aunara</span>
+            </div>
+            <p class="text-slate-400 text-sm">Copyright @2025 Aunara. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

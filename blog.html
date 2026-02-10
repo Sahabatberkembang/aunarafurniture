@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Blog - Aunara</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#6d4c41",
+                        "primary-dark": "#5d4037",
+                        "secondary": "#f4f1ea",
+                        "text-main": "#2d2d2d",
+                        "background-light": "#fdfbf7",
+                        "background-dark": "#1a1a1a",
+                        "surface-light": "#f4f1ea",
+                        "surface-dark": "#262626",
+                    },
+                    fontFamily: {
+                        sans: ['"DM Sans"', 'sans-serif'],
+                        display: ['"Playfair Display"', 'serif'],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        'xl': '1rem',
+                        '2xl': '1.5rem',
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Mobile Bottom Navigation */
+        .mobile-bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            border-top: 1px solid #e5e7eb;
+            z-index: 50;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-bottom-nav {
+                display: block;
+            }
+            body {
+                padding-bottom: 70px;
+            }
+        }
+
+        .mobile-bottom-nav a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem;
+            color: #6b7280;
+            font-size: 0.75rem;
+            transition: all 0.3s;
+        }
+
+        .mobile-bottom-nav a.active {
+            color: #6d4c41;
+        }
+
+        .mobile-bottom-nav a .material-icons-outlined {
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-gray-200 font-sans antialiased transition-colors duration-300">
+    
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-3xl text-primary">chair</span>
+                <a href="index.html" class="text-2xl font-bold font-display tracking-tight text-gray-900 dark:text-white">Aunara</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600 dark:text-gray-300">
+                <a class="relative py-1 hover:text-primary transition-colors after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full" href="index.html">Home</a>
+                <a class="relative py-1 hover:text-primary transition-colors after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full" href="collection.html">Collection</a>
+                <a class="relative py-1 hover:text-primary transition-colors after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full" href="rooms.html">Rooms</a>
+                <a class="relative py-1 hover:text-primary transition-colors after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full" href="shop.html">Shop</a>
+                <a class="relative py-1 hover:text-primary transition-colors after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full text-primary after:w-full" href="blog.html">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-10">
+        <!-- Blog Section Content -->
+        <section class="max-w-7xl mx-auto px-6 py-10 mb-20">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div>
+                    <span class="text-xs font-bold tracking-widest text-primary uppercase mb-3 block">/ Our Journal</span>
+                    <h2 class="text-4xl md:text-5xl font-display text-gray-900 dark:text-white leading-tight">
+                        Design Stories <br class="hidden md:block"/> & Inspiration
+                    </h2>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <article class="group cursor-pointer">
+                    <a href="article-1.html">
+                        <div class="relative h-[350px] rounded-2xl overflow-hidden mb-6">
+                            <img alt="Soto Lamongan" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="/home/fatah/.gemini/antigravity/brain/8eadba15-9469-46d7-8033-faa5ecb5055d/soto_lamongan_1770230836619.png"/>
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-300"></div>
+                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-primary shadow-sm">
+                                Kuliner & Budaya
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-display font-medium text-gray-900 dark:text-white mb-3 group-hover:text-primary transition-colors">
+                            Menelusuri Jejak Lezat Kuliner Khas Lamongan
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4 line-clamp-2 font-light">
+                            Sejarah, cita rasa, dan legalitas budaya kuliner Lamongan: Soto Ayam, Nasi Boran, dan Tahu Campur yang melegenda.
+                        </p>
+                        <div class="inline-flex items-center text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
+                            Read More <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="group cursor-pointer">
+                    <a href="article-2.html">
+                        <div class="relative h-[350px] rounded-2xl overflow-hidden mb-6">
+                            <img alt="Nasi Krawu Gresik" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="/home/fatah/.gemini/antigravity/brain/8eadba15-9469-46d7-8033-faa5ecb5055d/nasi_krawu_gresik_1770230887440.png"/>
+                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-300"></div>
+                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-primary shadow-sm">
+                                Kuliner & Budaya
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-display font-medium text-gray-900 dark:text-white mb-3 group-hover:text-primary transition-colors">
+                            Kuliner Khas Gresik: Warisan Cita Rasa yang Terlindungi
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4 line-clamp-2 font-light">
+                            Dari Nasi Krawu hingga Pudding Gresik, menelusuri kekayaan kuliner pesisir yang telah mendapat perlindungan hukum.
+                        </p>
+                        <div class="inline-flex items-center text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
+                            Read More <span class="material-symbols-outlined text-sm ml-1">arrow_forward</span>
+                        </div>
+                    </a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-black text-white pt-20 pb-10 rounded-t-3xl mx-2 md:mx-4">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 border-b border-gray-800 pb-16">
+            <div class="lg:col-span-1">
+                <div class="flex items-center gap-2 mb-6">
+                    <span class="material-symbols-outlined text-3xl text-white">chair</span>
+                    <span class="text-2xl font-bold font-display tracking-tight">Aunara</span>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                    Furniture that feels like home, designed to blend seamlessly into your life and space with effortless charm.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-bold text-sm uppercase tracking-wider mb-6 text-gray-500">Company</h4>
+                <ul class="space-y-4 text-sm text-gray-300">
+                    <li><a class="hover:text-primary transition-colors" href="#">About Aunara</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Sustainability</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Press</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-sm uppercase tracking-wider mb-6 text-gray-500">Shop</h4>
+                <ul class="space-y-4 text-sm text-gray-300">
+                    <li><a class="hover:text-primary transition-colors" href="shop.html">Living Room</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="shop.html">Bedroom</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="shop.html">Office</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-sm uppercase tracking-wider mb-6 text-gray-500">Help</h4>
+                <ul class="space-y-4 text-sm text-gray-300">
+                    <li><a class="hover:text-primary transition-colors" href="#">FAQ</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Contact Support</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 mt-10 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+            <p>Copyright @2025 Aunara. All rights reserved.</p>
+            <div class="flex gap-6 mt-4 md:mt-0">
+                <a class="hover:text-white" href="#">Terms & Conditions</a>
+                <a class="hover:text-white" href="#">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav">
+        <div class="grid grid-cols-5 h-full">
+            <a href="index.html">
+                <span class="material-icons-outlined">home</span>
+                <span>Home</span>
+            </a>
+            <a href="collection.html">
+                <span class="material-icons-outlined">grid_view</span>
+                <span>Collection</span>
+            </a>
+            <a href="shop.html">
+                <span class="material-icons-outlined">shopping_bag</span>
+                <span>Shop</span>
+            </a>
+            <a href="blog.html" class="active">
+                <span class="material-icons-outlined">article</span>
+                <span>Blog</span>
+            </a>
+            <a href="#" onclick="openWhatsApp('Contact from Blog'); return false;">
+                <span class="material-icons-outlined">chat</span>
+                <span>Contact</span>
+            </a>
+        </div>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>
