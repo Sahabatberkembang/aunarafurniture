@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Product Details - Aunara</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#6d4c41",
+                        "primary-dark": "#5d4037",
+                        "secondary": "#f4f1ea",
+                        "text-main": "#2d2d2d",
+                        "background-light": "#fdfbf7",
+                        "background-dark": "#1a1a1a",
+                        "surface-light": "#f4f1ea",
+                        "surface-dark": "#262626",
+                    },
+                    fontFamily: {
+                        sans: ['"DM Sans"', 'sans-serif'],
+                        display: ['"Playfair Display"', 'serif'],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        'xl': '1rem',
+                        '2xl': '1.5rem',
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        
+        /* Mobile Bottom Navigation */
+        .mobile-bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            border-top: 1px solid #e5e7eb;
+            z-index: 50;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-bottom-nav {
+                display: block;
+            }
+            body {
+                padding-bottom: 70px;
+            }
+        }
+
+        .mobile-bottom-nav a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem;
+            color: #6b7280;
+            font-size: 0.75rem;
+            transition: all 0.3s;
+        }
+
+        .mobile-bottom-nav a.active {
+            color: #6d4c41;
+        }
+
+        .mobile-bottom-nav a .material-icons-outlined {
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .thumbnail {
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .thumbnail:hover {
+            border-color: #6d4c41;
+        }
+
+        .thumbnail.active {
+            border-color: #6d4c41;
+            border-width: 2px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-gray-200 font-sans antialiased transition-colors duration-300">
+    
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-3xl text-primary">chair</span>
+                <a href="index.html" class="text-2xl font-bold font-display tracking-tight text-gray-900 dark:text-white">Aunara</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600 dark:text-gray-300">
+                <a class="relative py-1 hover:text-primary transition-colors after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full" href="index.html">Home</a>
+                <a class="relative py-1 hover:text-primary transition-colors after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full" href="collection.html">Collection</a>
+                <a class="relative py-1 hover:text-primary transition-colors after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full" href="rooms.html">Rooms</a>
+                <a class="relative py-1 hover:text-primary transition-colors after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full text-primary after:w-full" href="shop.html">Shop</a>
+                <a class="relative py-1 hover:text-primary transition-colors after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full" href="blog.html">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Detail Section -->
+    <main class="max-w-7xl mx-auto px-6 py-16">
+        <div class="mb-8">
+            <a href="shop.html" class="inline-flex items-center text-sm font-medium text-primary hover:text-primary-dark transition-colors">
+                <span class="material-symbols-outlined text-sm mr-1">arrow_back</span>
+                Back to Shop
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <!-- Product Images -->
+            <div>
+                <div class="mb-4 rounded-2xl overflow-hidden bg-gray-50 dark:bg-gray-800">
+                    <img id="mainImage" alt="Product" class="w-full h-[500px] object-contain p-8"/>
+                </div>
+                <div class="grid grid-cols-4 gap-4">
+                    <div class="thumbnail active rounded-lg overflow-hidden bg-gray-50 dark:bg-gray-800 border-2 border-gray-200" onclick="changeImage(0)">
+                        <img class="w-full h-24 object-contain p-2" alt="Thumbnail 1"/>
+                    </div>
+                    <div class="thumbnail rounded-lg overflow-hidden bg-gray-50 dark:bg-gray-800 border-2 border-gray-200" onclick="changeImage(1)">
+                        <img class="w-full h-24 object-contain p-2" alt="Thumbnail 2"/>
+                    </div>
+                    <div class="thumbnail rounded-lg overflow-hidden bg-gray-50 dark:bg-gray-800 border-2 border-gray-200" onclick="changeImage(2)">
+                        <img class="w-full h-24 object-contain p-2" alt="Thumbnail 3"/>
+                    </div>
+                    <div class="thumbnail rounded-lg overflow-hidden bg-gray-50 dark:bg-gray-800 border-2 border-gray-200" onclick="changeImage(3)">
+                        <img class="w-full h-24 object-contain p-2" alt="Thumbnail 4"/>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div>
+                <div class="mb-6">
+                    <span class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
+                        Premium Quality
+                    </span>
+                    <h1 id="productName" class="text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-white mb-4"></h1>
+                    <div class="flex items-center gap-4 mb-6">
+                        <span id="productPrice" class="text-3xl font-bold text-primary"></span>
+                        <div class="flex items-center gap-1">
+                            <span class="material-icons-outlined text-yellow-500 text-sm">star</span>
+                            <span class="material-icons-outlined text-yellow-500 text-sm">star</span>
+                            <span class="material-icons-outlined text-yellow-500 text-sm">star</span>
+                            <span class="material-icons-outlined text-yellow-500 text-sm">star</span>
+                            <span class="material-icons-outlined text-yellow-500 text-sm">star</span>
+                            <span class="text-sm text-gray-600 ml-2">(4.9/5.0)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <h2 class="text-xl font-semibold mb-4">Description</h2>
+                    <p id="productDescription" class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6"></p>
+                    
+                    <h3 class="text-lg font-semibold mb-3">Features:</h3>
+                    <ul id="productFeatures" class="space-y-2 text-gray-600 dark:text-gray-400">
+                    </ul>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold mb-3">Specifications:</h3>
+                    <div id="productSpecs" class="grid grid-cols-2 gap-4">
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button onclick="orderProduct()" class="flex-1 bg-primary text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-dark transition-colors flex items-center justify-center gap-2">
+                        <span class="material-icons-outlined">shopping_cart</span>
+                        Order via WhatsApp
+                    </button>
+                    <button onclick="toggleFavorite()" class="px-6 py-4 border-2 border-gray-300 rounded-lg hover:border-primary hover:text-primary transition-colors">
+                        <span class="material-icons-outlined">favorite_border</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Products -->
+        <div class="mt-24">
+            <h2 class="text-3xl font-display font-bold mb-8">You May Also Like</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Related products will be added dynamically -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-black text-white pt-20 pb-10 rounded-t-3xl mx-2 md:mx-4 mt-20">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 border-b border-gray-800 pb-16">
+            <div class="lg:col-span-1">
+                <div class="flex items-center gap-2 mb-6">
+                    <span class="material-symbols-outlined text-3xl text-white">chair</span>
+                    <span class="text-2xl font-bold font-display tracking-tight">Aunara</span>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                    Furniture that feels like home, designed to blend seamlessly into your life and space with effortless charm.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-bold text-sm uppercase tracking-wider mb-6 text-gray-500">Company</h4>
+                <ul class="space-y-4 text-sm text-gray-300">
+                    <li><a class="hover:text-primary transition-colors" href="#">About Aunara</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Sustainability</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Press</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-sm uppercase tracking-wider mb-6 text-gray-500">Shop</h4>
+                <ul class="space-y-4 text-sm text-gray-300">
+                    <li><a class="hover:text-primary transition-colors" href="shop.html">Living Room</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="shop.html">Bedroom</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="shop.html">Office</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-sm uppercase tracking-wider mb-6 text-gray-500">Help</h4>
+                <ul class="space-y-4 text-sm text-gray-300">
+                    <li><a class="hover:text-primary transition-colors" href="#">FAQ</a></li>
+                    <li><a class="hover:text-primary transition-colors" href="#">Contact Support</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 mt-10 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+            <p>Copyright @2025 Aunara. All rights reserved.</p>
+            <div class="flex gap-6 mt-4 md:mt-0">
+                <a class="hover:text-white" href="#">Terms & Conditions</a>
+                <a class="hover:text-white" href="#">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav">
+        <div class="grid grid-cols-5 h-full">
+            <a href="index.html">
+                <span class="material-icons-outlined">home</span>
+                <span>Home</span>
+            </a>
+            <a href="collection.html">
+                <span class="material-icons-outlined">grid_view</span>
+                <span>Collection</span>
+            </a>
+            <a href="shop.html" class="active">
+                <span class="material-icons-outlined">shopping_bag</span>
+                <span>Shop</span>
+            </a>
+            <a href="blog.html">
+                <span class="material-icons-outlined">article</span>
+                <span>Blog</span>
+            </a>
+            <a href="#" onclick="openWhatsApp('Contact from Product Detail'); return false;">
+                <span class="material-icons-outlined">chat</span>
+                <span>Contact</span>
+            </a>
+        </div>
+    </nav>
+
+    <script src="script.js"></script>
+    <script>
+        // Product database
+        const products = {
+            'sculpted-chair': {
+                name: 'Sculpted Chair',
+                price: '$450',
+                description: 'Hand-carved from a single piece of premium solid wood, this sculptural chair seamlessly blends natural organic form with modern functionality. Each piece is unique, showcasing the natural grain and character of the wood.',
+                features: [
+                    'Hand-carved from single piece of solid wood',
+                    'Ergonomic design for maximum comfort',
+                    'Natural wood finish with protective coating',
+                    'Unique grain pattern in each piece',
+                    'Supports up to 250 lbs',
+                    'Easy to clean and maintain'
+                ],
+                specs: {
+                    'Material': 'Solid Oak Wood',
+                    'Dimensions': '32"H x 18"W x 20"D',
+                    'Weight': '15 lbs',
+                    'Color': 'Natural Wood',
+                    'Assembly': 'No assembly required',
+                    'Warranty': '2 years'
+                },
+                images: [
+                    'https://lh3.googleusercontent.com/aida-public/AB6AXuCqoxZKyd0-78zEpC6KPpy5-6P20wb8sTXItRNd4BOyY49gddKCF3xm2NK9SAORAMNRr1twYv1UYI4S32fTdYRCUdv1XcOrmLC0lnN__iZJDUTd6imgQufw1fcxUMkrtkK8Br-81AshM1jYb_0E2W_lc8XZaMXiVtEEHXOwfZdjQuKLNfffCcTUMU6HIGrsVpmLYnQeTbrKV-lFzyNGlC4clXJWwaYfwAyY8lfiy9SoQ6uJgq5BqYIoMpDLisUxEOxcjfwuRkcbjvk',
+                    'https://lh3.googleusercontent.com/aida-public/AB6AXuCqoxZKyd0-78zEpC6KPpy5-6P20wb8sTXItRNd4BOyY49gddKCF3xm2NK9SAORAMNRr1twYv1UYI4S32fTdYRCUdv1XcOrmLC0lnN__iZJDUTd6imgQufw1fcxUMkrtkK8Br-81AshM1jYb_0E2W_lc8XZaMXiVtEEHXOwfZdjQuKLNfffCcTUMU6HIGrsVpmLYnQeTbrKV-lFzyNGlC4clXJWwaYfwAyY8lfiy9SoQ6uJgq5BqYIoMpDLisUxEOxcjfwuRkcbjvk',
+                    'https://lh3.googleusercontent.com/aida-public/AB6AXuCqoxZKyd0-78zEpC6KPpy5-6P20wb8sTXItRNd4BOyY49gddKCF3xm2NK9SAORAMNRr1twYv1UYI4S32fTdYRCUdv1XcOrmLC0lnN__iZJDUTd6imgQufw1fcxUMkrtkK8Br-81AshM1jYb_0E2W_lc8XZaMXiVtEEHXOwfZdjQuKLNfffCcTUMU6HIGrsVpmLYnQeTbrKV-lFzyNGlC4clXJWwaYfwAyY8lfiy9SoQ6uJgq5BqYIoMpDLisUxEOxcjfwuRkcbjvk',
+                    'https://lh3.googleusercontent.com/aida-public/AB6AXuCqoxZKyd0-78zEpC6KPpy5-6P20wb8sTXItRNd4BOyY49gddKCF3xm2NK9SAORAMNRr1twYv1UYI4S32fTdYRCUdv1XcOrmLC0lnN__iZJDUTd6imgQufw1fcxUMkrtkK8Br-81AshM1jYb_0E2W_lc8XZaMXiVtEEHXOwfZdjQuKLNfffCcTUMU6HIGrsVpmLYnQeTbrKV-lFzyNGlC4clXJWwaYfwAyY8lfiy9SoQ6uJgq5BqYIoMpDLisUxEOxcjfwuRkcbjvk'
+                ]
+            },
+            'cozy-log-sofa': {
+                name: 'Cozy Log Sofa',
+                price: '$1,202',
+                description: 'A perfect blend of rustic charm and modern comfort. This unique sofa features solid wood construction with plush, soft cushions that invite you to relax and unwind. The natural wood grain adds warmth and character to any living space.',
+                features: [
+                    'Solid wood frame construction',
+                    'High-density foam cushions',
+                    'Removable and washable cushion covers',
+                    'Rustic-modern design aesthetic',
+                    'Seats 3 people comfortably',
+                    'Durable and long-lasting'
+                ],
+                specs: {
+                    'Material': 'Solid Pine Wood & Fabric',
+                    'Dimensions': '78"W x 35"D x 32"H',
+                    'Weight': '85 lbs',
+                    'Color': 'Natural Wood with Beige Cushions',
+                    'Assembly': 'Minimal assembly required',
+                    'Warranty': '3 years'
+                },
+                images: [
+                    'https://lh3.googleusercontent.com/aida-public/AB6AXuAMPCE984xt7i_1eUNqzfYnDEi0Z-g8QDBCyTVjimz3a-9fPCNsqcFxsumHy4IjTalrAU_IG2yZ7Dad3rsH4G2Z6oh4Wq5PBRzI7F_jWvvqd_szeh5ruEUge-HpUBAhvqlAYClGRJw0ZC5bcd8yl6Rsv5rh0QmkIFMth1W3K1TH18OGq_QIEytIekaD57Mbm679AykRQE7J7JRqshcPPPQAnBWbKxhYBZRtwctaYNgHUgh85ftA3Sry8JbJ0MpsYz6nuCCSZB_SvlM',
+                    'https://lh3.googleusercontent.com/aida-public/AB6AXuAMPCE984xt7i_1eUNqzfYnDEi0Z-g8QDBCyTVjimz3a-9fPCNsqcFxsumHy4IjTalrAU_IG2yZ7Dad3rsH4G2Z6oh4Wq5PBRzI7F_jWvvqd_szeh5ruEUge-HpUBAhvqlAYClGRJw0ZC5bcd8yl6Rsv5rh0QmkIFMth1W3K1TH18OGq_QIEytIekaD57Mbm679AykRQE7J7JRqshcPPPQAnBWbKxhYBZRtwctaYNgHUgh85ftA3Sry8JbJ0MpsYz6nuCCSZB_SvlM',
+                    'https://lh3.googleusercontent.com/aida-public/AB6AXuAMPCE984xt7i_1eUNqzfYnDEi0Z-g8QDBCyTVjimz3a-9fPCNsqcFxsumHy4IjTalrAU_IG2yZ7Dad3rsH4G2Z6oh4Wq5PBRzI7F_jWvvqd_szeh5ruEUge-HpUBAhvqlAYClGRJw0ZC5bcd8yl6Rsv5rh0QmkIFMth1W3K1TH18OGq_QIEytIekaD57Mbm679AykRQE7J7JRqshcPPPQAnBWbKxhYBZRtwctaYNgHUgh85ftA3Sry8JbJ0MpsYz6nuCCSZB_SvlM',
+                    'https://lh3.googleusercontent.com/aida-public/AB6AXuAMPCE984xt7i_1eUNqzfYnDEi0Z-g8QDBCyTVjimz3a-9fPCNsqcFxsumHy4IjTalrAU_IG2yZ7Dad3rsH4G2Z6oh4Wq5PBRzI7F_jWvvqd_szeh5ruEUge-HpUBAhvqlAYClGRJw0ZC5bcd8yl6Rsv5rh0QmkIFMth1W3K1TH18OGq_QIEytIekaD57Mbm679AykRQE7J7JRqshcPPPQAnBWbKxhYBZRtwctaYNgHUgh85ftA3Sry8JbJ0MpsYz6nuCCSZB_SvlM'
+                ]
+            },
+            'patch-armchair': {
+                name: 'Patch Armchair',
+                price: '$890',
+                description: 'A uniquely upholstered armchair featuring a charming vintage-inspired patchwork design. Each chair is carefully crafted with premium fabrics and solid wood frame, making it both a comfortable seat and a statement piece.',
+                features: [
+                    'Unique patchwork upholstery design',
+                    'Solid hardwood frame',
+                    'High-density foam padding',
+                    'Vintage-inspired aesthetic',
+                    'Sturdy and comfortable',
+                    'Perfect accent chair'
+                ],
+                specs: {
+                    'Material': 'Hardwood & Mixed Fabrics',
+                    'Dimensions': '30"W x 32"D x 35"H',
+                    'Weight': '35 lbs',
+                    'Color': 'Multi-color Patchwork',
+                    'Assembly': 'No assembly required',
+                    'Warranty': '2 years'
+                },
+                images: [
+                    'https://lh3.googleusercontent.com/aida-public/AB6AXuBQBea3fAOcNJg0h8AkUjuQwSjKCxe6clUOGEsOX8UzDo0evOrfvardqcvSGQq_PYOjs7FLCAlW2wquM5XfPd8d4puiMy4Qc88zYv2vqe-T5qSqJbpULa-TqjNgLxeds-ZRbkfxDeW-GpjyLVsPolBqjWvrTeL2Qqh10OXsAfi16hnGPyp95qznc3Iq7C37lKdELPKp7slGU3EGH15mkLs7FTRuJiA2NLyRktx_xI5slpGNE9ZHYM4Vwq_f6CWGMFJqbc5eGO1mZ0A',
+                    'https://lh3.googleusercontent.com/aida-public/AB6AXuBQBea3fAOcNJg0h8AkUjuQwSjKCxe6clUOGEsOX8UzDo0evOrfvardqcvSGQq_PYOjs7FLCAlW2wquM5XfPd8d4puiMy4Qc88zYv2vqe-T5qSqJbpULa-TqjNgLxeds-ZRbkfxDeW-GpjyLVsPolBqjWvrTeL2Qqh10OXsAfi16hnGPyp95qznc3Iq7C37lKdELPKp7slGU3EGH15mkLs7FTRuJiA2NLyRktx_xI5slpGNE9ZHYM4Vwq_f6CWGMFJqbc5eGO1mZ0A',
+                    'https://lh3.googleusercontent.com/aida-public/AB6AXuBQBea3fAOcNJg0h8AkUjuQwSjKCxe6clUOGEsOX8UzDo0evOrfvardqcvSGQq_PYOjs7FLCAlW2wquM5XfPd8d4puiMy4Qc88zYv2vqe-T5qSqJbpULa-TqjNgLxeds-ZRbkfxDeW-GpjyLVsPolBqjWvrTeL2Qqh10OXsAfi16hnGPyp95qznc3Iq7C37lKdELPKp7slGU3EGH15mkLs7FTRuJiA2NLyRktx_xI5slpGNE9ZHYM4Vwq_f6CWGMFJqbc5eGO1mZ0A',
+                    'https://lh3.googleusercontent.com/aida-public/AB6AXuBQBea3fAOcNJg0h8AkUjuQwSjKCxe6clUOGEsOX8UzDo0evOrfvardqcvSGQq_PYOjs7FLCAlW2wquM5XfPd8d4puiMy4Qc88zYv2vqe-T5qSqJbpULa-TqjNgLxeds-ZRbkfxDeW-GpjyLVsPolBqjWvrTeL2Qqh10OXsAfi16hnGPyp95qznc3Iq7C37lKdELPKp7slGU3EGH15mkLs7FTRuJiA2NLyRktx_xI5slpGNE9ZHYM4Vwq_f6CWGMFJqbc5eGO1mZ0A'
+                ]
+            },
+            'minimalist-bookshelf': {
+                name: 'Minimalist Bookshelf',
+                price: '$680',
+                description: 'Sleek and functional bookshelf with open shelving design, perfect for displaying your favorite books, plants, and decorative items. The minimalist aesthetic complements any modern interior.',
+                features: [
+                    'Open shelving design',
+                    'Solid wood construction',
+                    '5 spacious shelves',
+                    'Modern minimalist style',
+                    'Easy to assemble',
+                    'Versatile storage solution'
+                ],
+                specs: {
+                    'Material': 'Oak Wood',
+                    'Dimensions': '72"H x 36"W x 12"D',
+                    'Weight': '55 lbs',
+                    'Color': 'Natural Oak',
+                    'Assembly': 'Assembly required',
+                    'Warranty': '2 years'
+                },
+                images: [
+                    '/home/fatah/.gemini/antigravity/brain/33a722f2-403e-436f-9096-b783ce579006/minimalist_bookshelf_1770735778497.png',
+                    '/home/fatah/.gemini/antigravity/brain/33a722f2-403e-436f-9096-b783ce579006/minimalist_bookshelf_1770735778497.png',
+                    '/home/fatah/.gemini/antigravity/brain/33a722f2-403e-436f-9096-b783ce579006/minimalist_bookshelf_1770735778497.png',
+                    '/home/fatah/.gemini/antigravity/brain/33a722f2-403e-436f-9096-b783ce579006/minimalist_bookshelf_1770735778497.png'
+                ]
+            }
+        };
+
+        // Get product ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id') || 'sculpted-chair';
+        const product = products[productId];
+
+        // Load product data
+        if (product) {
+            document.getElementById('productName').textContent = product.name;
+            document.getElementById('productPrice').textContent = product.price;
+            document.getElementById('productDescription').textContent = product.description;
+            
+            // Load features
+            const featuresList = document.getElementById('productFeatures');
+            product.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.className = 'flex items-start gap-2';
+                li.innerHTML = `<span class="material-icons-outlined text-primary text-sm mt-1">check_circle</span><span>${feature}</span>`;
+                featuresList.appendChild(li);
+            });
+
+            // Load specs
+            const specsList = document.getElementById('productSpecs');
+            Object.entries(product.specs).forEach(([key, value]) => {
+                const div = document.createElement('div');
+                div.className = 'border-b border-gray-200 dark:border-gray-700 pb-2';
+                div.innerHTML = `
+                    <div class="text-sm text-gray-500">${key}</div>
+                    <div class="font-semibold">${value}</div>
+                `;
+                specsList.appendChild(div);
+            });
+
+            // Load images
+            const mainImage = document.getElementById('mainImage');
+            mainImage.src = product.images[0];
+            
+            const thumbnails = document.querySelectorAll('.thumbnail img');
+            thumbnails.forEach((thumb, index) => {
+                thumb.src = product.images[index];
+            });
+        }
+
+        // Change main image
+        let currentImageIndex = 0;
+        function changeImage(index) {
+            currentImageIndex = index;
+            const mainImage = document.getElementById('mainImage');
+            mainImage.src = product.images[index];
+            
+            // Update active thumbnail
+            document.querySelectorAll('.thumbnail').forEach((thumb, i) => {
+                if (i === index) {
+                    thumb.classList.add('active');
+                } else {
+                    thumb.classList.remove('active');
+                }
+            });
+        }
+
+        // Order product
+        function orderProduct() {
+            openWhatsApp(`${product.name} - ${product.price}`);
+        }
+
+        // Toggle favorite
+        function toggleFavorite() {
+            const btn = event.currentTarget;
+            const icon = btn.querySelector('.material-icons-outlined');
+            if (icon.textContent === 'favorite_border') {
+                icon.textContent = 'favorite';
+                icon.classList.add('text-red-500');
+            } else {
+                icon.textContent = 'favorite_border';
+                icon.classList.remove('text-red-500');
+            }
+        }
+    </script>
+</body>
+</html>
